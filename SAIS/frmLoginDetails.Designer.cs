@@ -59,7 +59,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login Details";
+            this.Text = "ข้อมูลการใช้งานระบบ";
             this.Load += new System.EventHandler(this.frmLoginDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

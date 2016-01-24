@@ -60,7 +60,7 @@
             this.groupBox1.Size = new System.Drawing.Size(258, 82);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search Customers";
+            this.groupBox1.Text = "ค้นหาลูกค้า";
             // 
             // txtCustomers
             // 
@@ -86,7 +86,7 @@
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(94, 40);
             this.Button3.TabIndex = 2;
-            this.Button3.Text = "&Export Excel";
+            this.Button3.Text = "&สร้าง Excel";
             this.Button3.UseVisualStyleBackColor = true;
             this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
@@ -117,7 +117,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCustomersRecord1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customers Record";
+            this.Text = "ข้อมูลลูกค้า";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomersRecord1_FormClosing);
             this.Load += new System.EventHandler(this.frmCustomersRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

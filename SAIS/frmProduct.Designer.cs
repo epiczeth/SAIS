@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduct));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtProductName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.cmbCompany = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGetData = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -62,32 +62,26 @@
             this.groupBox1.Size = new System.Drawing.Size(480, 162);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Product Info";
+            this.groupBox1.Text = "ข้อมูลสินค้า";
             // 
-            // txtProductName
+            // cmbCompany
             // 
-            this.txtProductName.Location = new System.Drawing.Point(166, 31);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(297, 24);
-            this.txtProductName.TabIndex = 0;
+            this.cmbCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCompany.FormattingEnabled = true;
+            this.cmbCompany.Location = new System.Drawing.Point(166, 112);
+            this.cmbCompany.Name = "cmbCompany";
+            this.cmbCompany.Size = new System.Drawing.Size(297, 25);
+            this.cmbCompany.TabIndex = 5;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Product Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 73);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Category";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "ผู้ผลิต";
             // 
             // cmbCategory
             // 
@@ -99,24 +93,30 @@
             this.cmbCategory.Size = new System.Drawing.Size(297, 25);
             this.cmbCategory.TabIndex = 3;
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Company";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(29, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ประเภทสินค้า";
             // 
-            // cmbCompany
+            // label1
             // 
-            this.cmbCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCompany.FormattingEnabled = true;
-            this.cmbCompany.Location = new System.Drawing.Point(166, 112);
-            this.cmbCompany.Name = "cmbCompany";
-            this.cmbCompany.Size = new System.Drawing.Size(297, 25);
-            this.cmbCompany.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ชื่อสินค้า";
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(166, 31);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(297, 24);
+            this.txtProductName.TabIndex = 0;
             // 
             // panel1
             // 
@@ -137,7 +137,7 @@
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(85, 32);
             this.btnGetData.TabIndex = 4;
-            this.btnGetData.Text = "&Get Data";
+            this.btnGetData.Text = "&โหลด";
             this.btnGetData.UseVisualStyleBackColor = true;
             this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
@@ -148,7 +148,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(85, 32);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&ปรับปรุง";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -159,7 +159,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(85, 32);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "&ลบ";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -169,7 +169,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 32);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "&Save";
+            this.btnSave.Text = "&บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -179,7 +179,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(85, 32);
             this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "&ใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -208,7 +208,7 @@
             this.MaximizeBox = false;
             this.Name = "frmProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Product";
+            this.Text = "สินค้า";
             this.Load += new System.EventHandler(this.frmProduct_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

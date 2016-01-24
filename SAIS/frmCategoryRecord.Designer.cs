@@ -45,12 +45,13 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(247, 339);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Category Name";
+            this.Column1.HeaderText = "ชื่อประเภทสินค้า";
             this.Column1.Name = "Column1";
             this.Column1.Width = 200;
             // 
@@ -70,7 +71,6 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Record";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCategoryRecord_FormClosing);
             this.Load += new System.EventHandler(this.frmCategoryRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -47,7 +47,7 @@
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(68, 32);
             this.btnGetData.TabIndex = 4;
-            this.btnGetData.Text = "&Get Data";
+            this.btnGetData.Text = "&โหลด";
             this.btnGetData.UseVisualStyleBackColor = true;
             this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
@@ -58,7 +58,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(68, 32);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&ปรับปรุง";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -72,7 +72,7 @@
             this.groupBox1.Size = new System.Drawing.Size(396, 85);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Company Name";
+            this.groupBox1.Text = "ชื่อบริษัท";
             // 
             // txtCompanyName
             // 
@@ -88,7 +88,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(68, 32);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "&ลบ";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -98,7 +98,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 32);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "&Save";
+            this.btnSave.Text = "&บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -108,7 +108,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(68, 32);
             this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "&สร้างใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -151,7 +151,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Company";
+            this.Text = "บริษัท";
             this.Load += new System.EventHandler(this.frmCompany_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

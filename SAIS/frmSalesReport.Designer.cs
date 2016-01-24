@@ -51,7 +51,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSalesReport";
-            this.Text = "Sales Report";
+            this.Text = "รายงานการขาย";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 

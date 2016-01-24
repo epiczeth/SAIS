@@ -68,27 +68,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(32, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Product Name";
+            this.label1.Text = "ชื่อสินค้า";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 17);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Features";
+            this.label2.Text = "รายละเอียด";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(29, 445);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Price (in INR)";
+            this.label3.Text = "ราคาต่อหน่วย";
             // 
             // txtFeatures
             // 
@@ -120,9 +120,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(29, 486);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.Size = new System.Drawing.Size(43, 17);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Quantity";
+            this.label4.Text = "จำนวน";
             // 
             // txtQty
             // 
@@ -158,7 +158,7 @@
             this.groupBox1.Size = new System.Drawing.Size(701, 609);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Stock Details";
+            this.groupBox1.Text = "ข้อมูลสินค้า";
             // 
             // button2
             // 
@@ -193,9 +193,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(32, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 17);
+            this.label7.Size = new System.Drawing.Size(29, 17);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Stock ID";
+            this.label7.Text = "รหัส";
             // 
             // dtpStockDate
             // 
@@ -211,9 +211,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(29, 570);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 17);
+            this.label6.Size = new System.Drawing.Size(30, 17);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Stock Date";
+            this.label6.Text = "วันที่";
             // 
             // txtTotalPrice
             // 
@@ -228,9 +228,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(29, 527);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
+            this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Total Price";
+            this.label5.Text = "รวมเป็นเงิน";
             // 
             // panel1
             // 
@@ -251,7 +251,7 @@
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(82, 32);
             this.btnGetData.TabIndex = 4;
-            this.btnGetData.Text = "&Get Data";
+            this.btnGetData.Text = "&โหลด";
             this.btnGetData.UseVisualStyleBackColor = true;
             this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
@@ -262,7 +262,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(82, 32);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&ปรับปรุง";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -273,7 +273,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(82, 32);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "&ลบ";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -283,7 +283,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 32);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "&Save";
+            this.btnSave.Text = "&บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -293,7 +293,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(82, 32);
             this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "&สร้างใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -315,7 +315,7 @@
             this.groupBox2.Size = new System.Drawing.Size(311, 82);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search by Product Name";
+            this.groupBox2.Text = "ค้นหาจากชื่อสินค้า";
             // 
             // txtProduct
             // 
@@ -362,7 +362,7 @@
             this.MaximizeBox = false;
             this.Name = "frmStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Stock";
+            this.Text = "สินค้าคงคลัง";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmStock_FormClosing);
             this.Load += new System.EventHandler(this.frmStock_Load);
             this.groupBox1.ResumeLayout(false);

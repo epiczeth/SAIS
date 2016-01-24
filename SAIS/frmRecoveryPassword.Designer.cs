@@ -43,7 +43,7 @@
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(93, 24);
             this.Button1.TabIndex = 1;
-            this.Button1.Text = "Send";
+            this.Button1.Text = "ส่ง";
             this.Button1.UseVisualStyleBackColor = true;
             this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -55,9 +55,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(38, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 21);
+            this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Enter Email :";
+            this.label1.Text = "ระบุอีเมล์ :";
             // 
             // txtEmail
             // 
@@ -89,7 +89,7 @@
             this.Name = "frmRecoveryPassword";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Password Recovery";
+            this.Text = "กู้คืนรหัสผ่าน";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RecoveryPassword_FormClosing);
             this.Load += new System.EventHandler(this.RecoveryPassword_Load);
             this.ResumeLayout(false);

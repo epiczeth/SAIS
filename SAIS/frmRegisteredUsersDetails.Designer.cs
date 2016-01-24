@@ -85,7 +85,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Record";
+            this.Text = "ข้อมูลผู้ใช้";
             this.Load += new System.EventHandler(this.frmRegisteredUsersDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -54,11 +54,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(81, 43);
+            this.label1.Location = new System.Drawing.Point(172, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(437, 39);
+            this.label1.Size = new System.Drawing.Size(198, 39);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Inventory Management System";
+            this.label1.Text = "ระบบขายสินค้า";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -69,9 +69,9 @@
             this.label2.ForeColor = System.Drawing.Color.Teal;
             this.label2.Location = new System.Drawing.Point(225, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 22);
+            this.label2.Size = new System.Drawing.Size(79, 22);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Version 1.0.0";
+            this.label2.Text = "รุ่นที่ 1.0.0";
             // 
             // label3
             // 

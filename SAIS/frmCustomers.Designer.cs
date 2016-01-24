@@ -81,7 +81,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 29);
             this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "&ลบ";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -105,7 +105,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(87, 29);
             this.btnUpdate.TabIndex = 2;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&ปรับปรุง";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -116,7 +116,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 29);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "&Save";
+            this.btnSave.Text = "&บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -127,7 +127,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(87, 29);
             this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "&สร้างใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -146,9 +146,9 @@
             this.Label11.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label11.Location = new System.Drawing.Point(31, 29);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(140, 22);
+            this.Label11.Size = new System.Drawing.Size(126, 22);
             this.Label11.TabIndex = 12;
-            this.Label11.Text = "Customer Details";
+            this.Label11.Text = "รายละเอียดลูกค้า";
             // 
             // txtFaxNo
             // 
@@ -180,9 +180,9 @@
             this.Label23.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label23.Location = new System.Drawing.Point(37, 470);
             this.Label23.Name = "Label23";
-            this.Label23.Size = new System.Drawing.Size(40, 17);
+            this.Label23.Size = new System.Drawing.Size(57, 17);
             this.Label23.TabIndex = 77;
-            this.Label23.Text = "Notes";
+            this.Label23.Text = "หมายเหตุ";
             // 
             // Label22
             // 
@@ -190,9 +190,9 @@
             this.Label22.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label22.Location = new System.Drawing.Point(37, 435);
             this.Label22.Name = "Label22";
-            this.Label22.Size = new System.Drawing.Size(49, 17);
+            this.Label22.Size = new System.Drawing.Size(40, 17);
             this.Label22.TabIndex = 76;
-            this.Label22.Text = "Fax No.";
+            this.Label22.Text = "แฟ๊กซ์";
             // 
             // Label21
             // 
@@ -200,9 +200,9 @@
             this.Label21.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label21.Location = new System.Drawing.Point(37, 397);
             this.Label21.Name = "Label21";
-            this.Label21.Size = new System.Drawing.Size(74, 17);
+            this.Label21.Size = new System.Drawing.Size(66, 17);
             this.Label21.TabIndex = 75;
-            this.Label21.Text = "*Mobile No.";
+            this.Label21.Text = "*เบอร์มิอถือ";
             // 
             // Label20
             // 
@@ -210,9 +210,9 @@
             this.Label20.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label20.Location = new System.Drawing.Point(37, 360);
             this.Label20.Name = "Label20";
-            this.Label20.Size = new System.Drawing.Size(38, 17);
+            this.Label20.Size = new System.Drawing.Size(34, 17);
             this.Label20.TabIndex = 74;
-            this.Label20.Text = "Email";
+            this.Label20.Text = "อีเมล์";
             // 
             // Label19
             // 
@@ -220,9 +220,9 @@
             this.Label19.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label19.Location = new System.Drawing.Point(37, 323);
             this.Label19.Name = "Label19";
-            this.Label19.Size = new System.Drawing.Size(43, 17);
+            this.Label19.Size = new System.Drawing.Size(51, 17);
             this.Label19.TabIndex = 73;
-            this.Label19.Text = "Phone";
+            this.Label19.Text = "เบอร์โทร";
             // 
             // cmbState
             // 
@@ -296,9 +296,9 @@
             this.Label9.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label9.Location = new System.Drawing.Point(37, 287);
             this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(91, 17);
+            this.Label9.Size = new System.Drawing.Size(78, 17);
             this.Label9.TabIndex = 72;
-            this.Label9.Text = "*Zip/Post Code";
+            this.Label9.Text = "*รหัสไปรษณีย์";
             // 
             // Label8
             // 
@@ -306,9 +306,9 @@
             this.Label8.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label8.Location = new System.Drawing.Point(37, 252);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(40, 17);
+            this.Label8.Size = new System.Drawing.Size(47, 17);
             this.Label8.TabIndex = 71;
-            this.Label8.Text = "*State";
+            this.Label8.Text = "*จังหวัด";
             // 
             // Label7
             // 
@@ -316,9 +316,9 @@
             this.Label7.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.Location = new System.Drawing.Point(37, 183);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(65, 17);
+            this.Label7.Size = new System.Drawing.Size(54, 17);
             this.Label7.TabIndex = 70;
-            this.Label7.Text = "Landmark";
+            this.Label7.Text = "จุดสังเกตุ";
             // 
             // Label6
             // 
@@ -326,9 +326,9 @@
             this.Label6.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label6.Location = new System.Drawing.Point(37, 218);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(36, 17);
+            this.Label6.Size = new System.Drawing.Size(37, 17);
             this.Label6.TabIndex = 69;
-            this.Label6.Text = "*City";
+            this.Label6.Text = "*เมือง";
             // 
             // Label5
             // 
@@ -336,9 +336,9 @@
             this.Label5.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label5.Location = new System.Drawing.Point(37, 151);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(57, 17);
+            this.Label5.Size = new System.Drawing.Size(35, 17);
             this.Label5.TabIndex = 68;
-            this.Label5.Text = "*Address";
+            this.Label5.Text = "*ที่อยู่";
             // 
             // Label2
             // 
@@ -346,9 +346,9 @@
             this.Label2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(37, 116);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(46, 17);
+            this.Label2.Size = new System.Drawing.Size(61, 17);
             this.Label2.TabIndex = 67;
-            this.Label2.Text = "*Name";
+            this.Label2.Text = "*ชื่อ - สกุล";
             // 
             // txtCustomerName
             // 
@@ -371,9 +371,9 @@
             this.Label4.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label4.Location = new System.Drawing.Point(37, 81);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(80, 17);
+            this.Label4.Size = new System.Drawing.Size(29, 17);
             this.Label4.TabIndex = 66;
-            this.Label4.Text = "Customer ID";
+            this.Label4.Text = "รหัส";
             // 
             // txtZipCode
             // 
@@ -431,7 +431,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCustomers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customers";
+            this.Text = "ลูกค้า";
             this.Load += new System.EventHandler(this.frmCustomers_Load);
             this.GroupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

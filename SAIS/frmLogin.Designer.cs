@@ -53,9 +53,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(43, 80);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 37);
+            this.label1.Size = new System.Drawing.Size(241, 37);
             this.label1.TabIndex = 57;
-            this.label1.Text = "Login";
+            this.label1.Text = "ชื่อผู้ใช้และรหัสผ่าน";
             // 
             // groupBox1
             // 
@@ -80,7 +80,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(70, 31);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.Text = "&ยกเลิก";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
@@ -90,7 +90,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(84, 31);
             this.btnOK.TabIndex = 3;
-            this.btnOK.Text = "&OK";
+            this.btnOK.Text = "&ตกลง";
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // txtPassword
@@ -101,6 +101,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(186, 25);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "1234";
             // 
             // txtUserName
             // 
@@ -110,6 +111,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(186, 25);
             this.txtUserName.TabIndex = 1;
+            this.txtUserName.Text = "admin";
             // 
             // PasswordLabel
             // 
@@ -119,7 +121,7 @@
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(105, 23);
             this.PasswordLabel.TabIndex = 22;
-            this.PasswordLabel.Text = "&Password";
+            this.PasswordLabel.Text = "&รหัสผ่าน";
             this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // UsernameLabel
@@ -130,7 +132,7 @@
             this.UsernameLabel.Name = "UsernameLabel";
             this.UsernameLabel.Size = new System.Drawing.Size(115, 23);
             this.UsernameLabel.TabIndex = 21;
-            this.UsernameLabel.Text = "&User Name";
+            this.UsernameLabel.Text = "&ชื่อผู้ใช้";
             this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ProgressBar1
@@ -149,10 +151,10 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(46, 374);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(137, 21);
+            this.linkLabel1.Size = new System.Drawing.Size(109, 21);
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Change Password";
+            this.linkLabel1.Text = "เปลี่ยนรหัสผ่าน";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // linkLabel3
@@ -163,10 +165,10 @@
             this.linkLabel3.LinkColor = System.Drawing.Color.White;
             this.linkLabel3.Location = new System.Drawing.Point(212, 374);
             this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(148, 21);
+            this.linkLabel3.Size = new System.Drawing.Size(96, 21);
             this.linkLabel3.TabIndex = 2;
             this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Password Recovery";
+            this.linkLabel3.Text = "กู้คืนรหัสผ่าน";
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // pictureBox1
@@ -200,7 +202,7 @@
             this.MinimizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login Form";
+            this.Text = "เข้าสู่ระบบ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

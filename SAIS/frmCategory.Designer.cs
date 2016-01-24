@@ -48,10 +48,10 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(396, 85);
+            this.groupBox1.Size = new System.Drawing.Size(409, 85);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Category Name";
+            this.groupBox1.Text = "ชื่อประเภทสินค้า";
             // 
             // txtCategoryName
             // 
@@ -70,16 +70,16 @@
             this.panel1.Controls.Add(this.btnNew);
             this.panel1.Location = new System.Drawing.Point(26, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(396, 62);
+            this.panel1.Size = new System.Drawing.Size(409, 62);
             this.panel1.TabIndex = 1;
             // 
             // btnGetData
             // 
             this.btnGetData.Location = new System.Drawing.Point(309, 14);
             this.btnGetData.Name = "btnGetData";
-            this.btnGetData.Size = new System.Drawing.Size(68, 32);
+            this.btnGetData.Size = new System.Drawing.Size(86, 32);
             this.btnGetData.TabIndex = 4;
-            this.btnGetData.Text = "&Get Data";
+            this.btnGetData.Text = "&โหลดข้อมูล";
             this.btnGetData.UseVisualStyleBackColor = true;
             this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
@@ -90,7 +90,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(68, 32);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&ปรับปรุง";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -101,7 +101,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(68, 32);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "&ลบ";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -111,7 +111,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 32);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "&Save";
+            this.btnSave.Text = "&บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -121,7 +121,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(68, 32);
             this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "&สร้างใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -138,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(447, 210);
+            this.ClientSize = new System.Drawing.Size(465, 210);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
@@ -151,7 +151,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Category";
+            this.Text = "ประเภทสินค้า";
             this.Load += new System.EventHandler(this.frmCategory_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

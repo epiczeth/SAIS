@@ -34,8 +34,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCustomers = new System.Windows.Forms.TextBox();
             this.GroupBox2 = new System.Windows.Forms.GroupBox();
-            this.Button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -61,7 +61,7 @@
             this.groupBox1.Size = new System.Drawing.Size(258, 82);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search Customers";
+            this.groupBox1.Text = "ค้นหาลูกค้า";
             // 
             // txtCustomers
             // 
@@ -81,17 +81,6 @@
             this.GroupBox2.TabIndex = 18;
             this.GroupBox2.TabStop = false;
             // 
-            // Button3
-            // 
-            this.Button3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button3.Location = new System.Drawing.Point(19, 23);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(94, 40);
-            this.Button3.TabIndex = 2;
-            this.Button3.Text = "&Export Excel";
-            this.Button3.UseVisualStyleBackColor = true;
-            this.Button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,9 +88,20 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 40);
             this.button1.TabIndex = 3;
-            this.button1.Text = "&View Report";
+            this.button1.Text = "&แสดงรายงาน";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Button3
+            // 
+            this.Button3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.Location = new System.Drawing.Point(19, 23);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(94, 40);
+            this.Button3.TabIndex = 2;
+            this.Button3.Text = "&สร้าง Excel";
+            this.Button3.UseVisualStyleBackColor = true;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // timer1
             // 
@@ -123,7 +123,7 @@
             this.MaximizeBox = false;
             this.Name = "frmCustomersRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Customers Record";
+            this.Text = "ข้อมูลลูกค้า";
             this.Load += new System.EventHandler(this.frmCustomersRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

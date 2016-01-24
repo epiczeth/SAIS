@@ -82,6 +82,30 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             GetData();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                 DataGridViewRow dr = dataGridView1.SelectedRows[0];
+            this.Hide();
+            frmCategory frm = new frmCategory();
+            // or simply use column name instead of index
+            //dr.Cells["id"].Value.ToString();
+            frm.Show();
+            frm.txtCategoryName.Text = dr.Cells[0].Value.ToString();
+            frm.textBox1.Text = dr.Cells[0].Value.ToString();
+            frm.btnDelete.Enabled = true;
+            frm.btnUpdate.Enabled = true;
+            frm.txtCategoryName.Focus();
+            frm.btnSave.Enabled = false;
+            }
+            catch 
+            {
+                
+               
+            }
+        }
     }
 
 }

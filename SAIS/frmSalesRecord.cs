@@ -28,6 +28,8 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         private void frmSalesRecord_Load(object sender, EventArgs e)
         {
             FillCombo();
+            TabControl1.TabPages.Remove(TabPage1);
+            TabControl1.TabPages.Remove(TabPage2);
         }
 
         private void Button3_Click(object sender, EventArgs e)

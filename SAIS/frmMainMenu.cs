@@ -15,6 +15,16 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         OleDbDataReader rdr = null;
         OleDbConnection con = null;
         OleDbCommand cmd = null;
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
         String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         public frmMainMenu()
         {

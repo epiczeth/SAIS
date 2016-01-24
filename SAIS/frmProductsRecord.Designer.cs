@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtProductname = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -40,6 +37,9 @@
             this.txtCompany = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Button3 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,24 +63,6 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Product Name";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Category";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Company";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 250;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtProductname);
@@ -89,7 +71,7 @@
             this.groupBox1.Size = new System.Drawing.Size(213, 82);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search by Product Name";
+            this.groupBox1.Text = "ค้นหาจากชื่อสินค้า";
             // 
             // txtProductname
             // 
@@ -107,7 +89,7 @@
             this.groupBox2.Size = new System.Drawing.Size(205, 82);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search by Category";
+            this.groupBox2.Text = "ค้นหาประเภทสินค้า";
             // 
             // txtCategory
             // 
@@ -125,7 +107,7 @@
             this.groupBox3.Size = new System.Drawing.Size(200, 82);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Search by Company";
+            this.groupBox3.Text = "ค้นหาจากผู้ผลิต";
             // 
             // txtCompany
             // 
@@ -151,9 +133,27 @@
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(63, 43);
             this.Button3.TabIndex = 2;
-            this.Button3.Text = "&Export Excel";
+            this.Button3.Text = "&สร้าง Excel";
             this.Button3.UseVisualStyleBackColor = true;
             this.Button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ชื่อสินค้า";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ประเภท";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ผู้ผลิต";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
             // 
             // frmProductsRecord
             // 
@@ -172,8 +172,7 @@
             this.MaximizeBox = false;
             this.Name = "frmProductsRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Products Record";
-      
+            this.Text = "ข้อมูลสินค้า";
             this.Load += new System.EventHandler(this.frmProductsRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -190,9 +189,6 @@
         #endregion
 
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtProductname;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -201,5 +197,8 @@
         private System.Windows.Forms.TextBox txtCompany;
         internal System.Windows.Forms.GroupBox groupBox4;
         internal System.Windows.Forms.Button Button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

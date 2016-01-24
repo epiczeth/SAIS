@@ -116,5 +116,34 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dr = dataGridView1.SelectedRows[0];
+                this.Hide();
+                frmConfig obj = new frmConfig();
+                // or simply use column name instead of index
+                //dr.Cells["id"].Value.ToString();
+                obj.Show();
+                obj.txtConfigID.Text = dr.Cells[0].Value.ToString();
+                obj.cmbProductName.Text = dr.Cells[1].Value.ToString();
+                obj.txtFeatures.Text = dr.Cells[2].Value.ToString();
+                obj.txtPrice.Text = dr.Cells[3].Value.ToString();
+                byte[] data = (byte[])dr.Cells[4].Value;
+                MemoryStream ms = new MemoryStream(data);
+                obj.pictureBox1.Image = Image.FromStream(ms);
+                obj.btnUpdate.Enabled = true;
+                obj.btnDelete.Enabled = true;
+                obj.btnSave.Enabled = false;
+                obj.cmbProductName.Focus();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

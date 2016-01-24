@@ -56,9 +56,9 @@
             this.Label4.ForeColor = System.Drawing.Color.Black;
             this.Label4.Location = new System.Drawing.Point(33, 38);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(69, 17);
+            this.Label4.Size = new System.Drawing.Size(47, 17);
             this.Label4.TabIndex = 17;
-            this.Label4.Text = "User Name";
+            this.Label4.Text = "ชื่อผู้ใช้";
             // 
             // btnChangePassword
             // 
@@ -69,7 +69,7 @@
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(115, 38);
             this.btnChangePassword.TabIndex = 15;
-            this.btnChangePassword.Text = "&Change Password";
+            this.btnChangePassword.Text = "&เปลี่ยนรหัสผ่าน";
             this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -81,9 +81,9 @@
             this.Label3.ForeColor = System.Drawing.Color.Black;
             this.Label3.Location = new System.Drawing.Point(33, 163);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(109, 17);
+            this.Label3.Size = new System.Drawing.Size(81, 17);
             this.Label3.TabIndex = 16;
-            this.Label3.Text = "Confirm Password";
+            this.Label3.Text = "ยืนยันรหัสผ่าน";
             // 
             // txtConfirmPassword
             // 
@@ -117,9 +117,9 @@
             this.Label2.ForeColor = System.Drawing.Color.Black;
             this.Label2.Location = new System.Drawing.Point(33, 120);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(88, 17);
+            this.Label2.Size = new System.Drawing.Size(51, 17);
             this.Label2.TabIndex = 12;
-            this.Label2.Text = "New Password";
+            this.Label2.Text = "รหัสผ่าน";
             // 
             // Label1
             // 
@@ -129,9 +129,9 @@
             this.Label1.ForeColor = System.Drawing.Color.Black;
             this.Label1.Location = new System.Drawing.Point(33, 78);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(83, 17);
+            this.Label1.Size = new System.Drawing.Size(68, 17);
             this.Label1.TabIndex = 10;
-            this.Label1.Text = "Old Password";
+            this.Label1.Text = "รหัสผ่านเก่า";
             // 
             // frmChangePassword
             // 
@@ -156,6 +156,7 @@
             this.Name = "frmChangePassword";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "เปลี่ยนรหัสผ่าน";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChangePassword_FormClosing);
             this.Load += new System.EventHandler(this.frmChangePassword_Load);
             this.ResumeLayout(false);

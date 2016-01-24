@@ -68,7 +68,7 @@
             this.groupBox1.Size = new System.Drawing.Size(988, 475);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Config and Features Info";
+            this.groupBox1.Text = "ข้อมูลสินค้า";
             // 
             // button1
             // 
@@ -76,7 +76,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(244, 23);
             this.button1.TabIndex = 8;
-            this.button1.Text = "&Browse";
+            this.button1.Text = "&เปิดภาพ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -112,9 +112,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(29, 436);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.Size = new System.Drawing.Size(34, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Price (in INR)";
+            this.label3.Text = "ราคา";
             // 
             // cmbProductName
             // 
@@ -131,18 +131,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(29, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 17);
+            this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Features";
+            this.label2.Text = "รายละเอียด";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.Size = new System.Drawing.Size(53, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Product Name";
+            this.label1.Text = "ชื่อสินค้า";
             // 
             // panel1
             // 
@@ -163,7 +163,7 @@
             this.btnGetData.Name = "btnGetData";
             this.btnGetData.Size = new System.Drawing.Size(77, 32);
             this.btnGetData.TabIndex = 4;
-            this.btnGetData.Text = "&Get Data";
+            this.btnGetData.Text = "&โหลด";
             this.btnGetData.UseVisualStyleBackColor = true;
             this.btnGetData.Click += new System.EventHandler(this.btnGetData_Click);
             // 
@@ -174,7 +174,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(77, 32);
             this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&ปรับปรุง";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -185,7 +185,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(77, 32);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "&ลบ";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -195,7 +195,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(77, 32);
             this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "&Save";
+            this.btnSave.Text = "&บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -205,7 +205,7 @@
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(77, 32);
             this.btnNew.TabIndex = 0;
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "&สร้างใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -237,7 +237,7 @@
             this.MaximizeBox = false;
             this.Name = "frmConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configuration";
+            this.Text = "แก้ไขข้อมูลสินค้า";
             this.Load += new System.EventHandler(this.frmConfig_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

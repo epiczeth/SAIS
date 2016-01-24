@@ -11,6 +11,16 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmLogin : Form
     {
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
          String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
 
         public frmLogin()
@@ -22,13 +32,13 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             if (txtUserName.Text == "")
             {
-                MessageBox.Show("Please enter user name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาใส่ชื่อผู้ใช้", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUserName.Focus();
                 return;
             }
             if (txtPassword.Text == "")
             {
-                MessageBox.Show("Please enter password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาใส่รหัสผ่าน", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Focus();
                 return;
             }
@@ -75,7 +85,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                 else
                 {
-                    MessageBox.Show("Login is Failed...Try again !", "Login Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("เข้าสู่ระบบล้มเหลว...ลองใหม่อีกครั้ง !", "เข้าสู่ระบบล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     txtUserName.Clear();
                     txtPassword.Clear();
@@ -92,7 +102,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
       
@@ -105,6 +115,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+            Application.ExitThread();
             
         }
 

@@ -50,32 +50,32 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             if (txtUsername.Text == "")
             {
-                MessageBox.Show("Please enter username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุชื่อผู้ใช้", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUsername.Focus();
                 return;
             }
           
             if (txtPassword.Text == "")
             {
-                MessageBox.Show("Please enter password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุรหัสผ่าน", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Focus();
                 return;
             }
             if (txtName.Text == "")
             {
-                MessageBox.Show("Please enter name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุชื่อ", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtName.Focus();
                 return;
             }
             if (txtContact_no.Text == "")
             {
-                MessageBox.Show("Please enter contact no.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุเบอร์โทร.", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtContact_no.Focus();
                 return;
             }
             if (txtEmail_Address.Text == "")
             {
-                MessageBox.Show("Please enter email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุอีเมล์", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail_Address.Focus();
                 return;
             }
@@ -93,7 +93,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                 if (rdr.Read())
                 {
-                    MessageBox.Show("Username Already Exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ไม่สามารถใช้ชื่อนี้ได้", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsername.Text = "";
                     txtUsername.Focus();
 
@@ -122,14 +122,14 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 cmd.Connection = con;
                 cmd.ExecuteReader();
                 con.Close();
-                MessageBox.Show("Successfully Registered", "User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ลงทะเบียนสำเร็จ", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Autocomplete();
                 btnRegister.Enabled = false;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -140,7 +140,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 if (txtUsername.Text == "")
                 {
-                    MessageBox.Show("Please enter username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("กรุณาระบุชื่อผู้ใช้", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsername.Focus();
                     return;
                 }
@@ -154,12 +154,12 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                 if (rdr.Read())
                 {
-                    MessageBox.Show("Username not available", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ไม่สามารถใช้ชื่อนี้ได้", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (!rdr.Read())
                 {
-                    MessageBox.Show("Username available", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("สามารถใช้ชื่อนี้ได้", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUsername.Focus();
 
                 }
@@ -170,7 +170,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -181,7 +181,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 if (!rEMail.IsMatch(txtEmail_Address.Text))
                 {
-                    MessageBox.Show("invalid email address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("รูปแบบอีเมล์ไม่ถูกต้อง", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtEmail_Address.SelectAll();
                     e.Cancel = true;
                 }
@@ -200,7 +200,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 if (!rEMail.IsMatch(txtUsername.Text))
                 {
-                    MessageBox.Show("only letters,numbers and underscore is allowed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("สามารถใช้ได้แค่ตัวอักษร a-z, 0-9 และ _ เท่านั้น", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsername.SelectAll();
                     e.Cancel = true;
                 }
@@ -252,7 +252,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -280,7 +280,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -303,19 +303,19 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 cmd.Connection = con;
                 cmd.ExecuteReader();
                 con.Close();
-                MessageBox.Show("Successfully updated", "User Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ปรับปรุ่งข้อมูลสำเร็จ", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Autocomplete();
                 btnUpdate_record.Enabled = false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete this record?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("คุณต้องการลบข้อมูลนี้ใช้หรือไม่?", "ลบข้อมูล", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 delete_records();
             }
@@ -347,13 +347,13 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 RowsAffected = cmd.ExecuteNonQuery();
                 if (RowsAffected > 0)
                 {
-                    MessageBox.Show("Successfully deleted", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ลบข้อมูลสำเร็จ", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Autocomplete();
                     Reset();
                 }
                 else
                 {
-                    MessageBox.Show("No Record found", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ไม่พบข้อมูลดังกล่าว", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                     Autocomplete();
                 }
@@ -365,7 +365,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -373,7 +373,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             if (txtContact_no.TextLength > 10)
             {
-                MessageBox.Show("Only 10 digits are allowed", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("สูงสุด 10 ตัวอักษรเท่านั้น", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtContact_no.Focus();
             }
         }

@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStockRecord));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtProductname = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,12 +44,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtProductname = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,48 +70,6 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Stock ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Config ID";
-            this.Column8.Name = "Column8";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Product Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Features";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Price";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Quantity";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Total Price";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Stock Date";
-            this.Column7.Name = "Column7";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtProductname);
@@ -120,7 +78,7 @@
             this.groupBox1.Size = new System.Drawing.Size(290, 82);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search by Product Name";
+            this.groupBox1.Text = "ค้นหาจากชื่อสินค้า";
             // 
             // txtProductname
             // 
@@ -138,7 +96,7 @@
             this.groupBox2.Size = new System.Drawing.Size(154, 82);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search By Out Of Stock";
+            this.groupBox2.Text = "สินค้าที่หมด";
             // 
             // button1
             // 
@@ -146,7 +104,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 33);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Get Data";
+            this.button1.Text = "โหลด";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -157,7 +115,7 @@
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(94, 33);
             this.Button4.TabIndex = 6;
-            this.Button4.Text = "&Export Excel";
+            this.Button4.Text = "&สร้าง Excel";
             this.Button4.UseVisualStyleBackColor = true;
             this.Button4.Click += new System.EventHandler(this.Button4_Click);
             // 
@@ -168,9 +126,51 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 33);
             this.button2.TabIndex = 7;
-            this.button2.Text = "&Reset";
+            this.button2.Text = "&รีเซ็ต";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "รหัส";
+            this.Column1.Name = "Column1";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "รหัสสินค้า";
+            this.Column8.Name = "Column8";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ชื่อสินค้า";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "รายละเอียด";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "ราคา";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "จำนวน";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "มูลค่ารวม";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "วันที่";
+            this.Column7.Name = "Column7";
             // 
             // frmStockRecord
             // 
@@ -190,7 +190,7 @@
             this.MaximizeBox = false;
             this.Name = "frmStockRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Stock Record";
+            this.Text = "ข้อมูลสินค้าคงคลัง";
             this.Load += new System.EventHandler(this.frmStockRecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -207,6 +207,8 @@
         private System.Windows.Forms.TextBox txtProductname;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
+        internal System.Windows.Forms.Button Button4;
+        internal System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -215,7 +217,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        internal System.Windows.Forms.Button Button4;
-        internal System.Windows.Forms.Button button2;
     }
 }

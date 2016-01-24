@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,8 +110,8 @@
             this.registrationToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.RegistrationIcon;
             this.registrationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.registrationToolStripMenuItem.Name = "registrationToolStripMenuItem";
-            this.registrationToolStripMenuItem.Size = new System.Drawing.Size(113, 73);
-            this.registrationToolStripMenuItem.Text = "Registration";
+            this.registrationToolStripMenuItem.Size = new System.Drawing.Size(63, 73);
+            this.registrationToolStripMenuItem.Text = "ลงทะเบียน";
             this.registrationToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.registrationToolStripMenuItem.Click += new System.EventHandler(this.registrationToolStripMenuItem_Click);
             // 
@@ -121,8 +121,8 @@
             this.customerToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Usergroup;
             this.customerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(102, 73);
-            this.customerToolStripMenuItem.Text = "Customers";
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(62, 73);
+            this.customerToolStripMenuItem.Text = "ลูกค้า";
             this.customerToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
@@ -132,8 +132,8 @@
             this.productToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Box;
             this.productToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
-            this.productToolStripMenuItem.Size = new System.Drawing.Size(86, 73);
-            this.productToolStripMenuItem.Text = "Products";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(62, 73);
+            this.productToolStripMenuItem.Text = "สินค้า";
             this.productToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.productToolStripMenuItem.Click += new System.EventHandler(this.productToolStripMenuItem_Click);
             // 
@@ -143,8 +143,8 @@
             this.stockToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.stock_icon_v_3;
             this.stockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(62, 73);
-            this.stockToolStripMenuItem.Text = "Stock";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(69, 73);
+            this.stockToolStripMenuItem.Text = "สต๊อกสินค้า";
             this.stockToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
@@ -154,8 +154,8 @@
             this.invoiceToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.CCRQInvoice;
             this.invoiceToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
-            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(73, 73);
-            this.invoiceToolStripMenuItem.Text = "Invoice";
+            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(62, 73);
+            this.invoiceToolStripMenuItem.Text = "อินวอยซ์";
             this.invoiceToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.invoiceToolStripMenuItem.Click += new System.EventHandler(this.invoiceToolStripMenuItem_Click);
             // 
@@ -165,8 +165,8 @@
             this.logOutToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.logout;
             this.logOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(79, 73);
-            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(77, 73);
+            this.logOutToolStripMenuItem.Text = "ออกจากระบบ";
             this.logOutToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -194,41 +194,41 @@
             this.productsToolStripMenuItem1,
             this.configurationToolStripMenuItem});
             this.masterEntryToolStripMenuItem.Name = "masterEntryToolStripMenuItem";
-            this.masterEntryToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.masterEntryToolStripMenuItem.Text = "Master Entry";
+            this.masterEntryToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.masterEntryToolStripMenuItem.Text = "เมนูหลัก";
             // 
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
             this.categoryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.categoryToolStripMenuItem.Text = "Category";
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.categoryToolStripMenuItem.Text = "ประเภท";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // companyToolStripMenuItem
             // 
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-                        | System.Windows.Forms.Keys.C)));
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.companyToolStripMenuItem.Text = "Company";
+            this.companyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.C)));
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.companyToolStripMenuItem.Text = "บริษัท";
             this.companyToolStripMenuItem.Click += new System.EventHandler(this.companyToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem1
             // 
             this.productsToolStripMenuItem1.Name = "productsToolStripMenuItem1";
             this.productsToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
-            this.productsToolStripMenuItem1.Size = new System.Drawing.Size(218, 22);
-            this.productsToolStripMenuItem1.Text = "Product";
+            this.productsToolStripMenuItem1.Size = new System.Drawing.Size(220, 22);
+            this.productsToolStripMenuItem1.Text = "สินค้า";
             this.productsToolStripMenuItem1.Click += new System.EventHandler(this.productsToolStripMenuItem1_Click);
             // 
             // configurationToolStripMenuItem
             // 
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            this.configurationToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift)
-                        | System.Windows.Forms.Keys.C)));
-            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.configurationToolStripMenuItem.Text = "Configuration";
+            this.configurationToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.configurationToolStripMenuItem.Text = "แก้ไขข้อมูลสินค้า";
             this.configurationToolStripMenuItem.Click += new System.EventHandler(this.configurationToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
@@ -237,23 +237,23 @@
             this.registrationToolStripMenuItem1,
             this.loginDetailsToolStripMenuItem});
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.usersToolStripMenuItem.Text = "ผู้ใช้";
             // 
             // registrationToolStripMenuItem1
             // 
             this.registrationToolStripMenuItem1.Name = "registrationToolStripMenuItem1";
             this.registrationToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
-            this.registrationToolStripMenuItem1.Size = new System.Drawing.Size(178, 22);
-            this.registrationToolStripMenuItem1.Text = "Registration";
+            this.registrationToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.registrationToolStripMenuItem1.Text = "ลงทะเบียน";
             this.registrationToolStripMenuItem1.Click += new System.EventHandler(this.registrationToolStripMenuItem1_Click);
             // 
             // loginDetailsToolStripMenuItem
             // 
             this.loginDetailsToolStripMenuItem.Name = "loginDetailsToolStripMenuItem";
             this.loginDetailsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L)));
-            this.loginDetailsToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.loginDetailsToolStripMenuItem.Text = "Login Details";
+            this.loginDetailsToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.loginDetailsToolStripMenuItem.Text = "ข้อมูลการเข้าระบบ";
             this.loginDetailsToolStripMenuItem.Click += new System.EventHandler(this.loginDetailsToolStripMenuItem_Click);
             // 
             // customerToolStripMenuItem1
@@ -261,14 +261,14 @@
             this.customerToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.profileEntryToolStripMenuItem});
             this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
-            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
-            this.customerToolStripMenuItem1.Text = "Customers";
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
+            this.customerToolStripMenuItem1.Text = "ลูกค้า";
             // 
             // profileEntryToolStripMenuItem
             // 
             this.profileEntryToolStripMenuItem.Name = "profileEntryToolStripMenuItem";
-            this.profileEntryToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.profileEntryToolStripMenuItem.Text = "Profile Entry";
+            this.profileEntryToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.profileEntryToolStripMenuItem.Text = "โปรไฟล์";
             this.profileEntryToolStripMenuItem.Click += new System.EventHandler(this.profileEntryToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem
@@ -277,24 +277,24 @@
             this.stockToolStripMenuItem1,
             this.salesToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.productsToolStripMenuItem.Text = "Products";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.productsToolStripMenuItem.Text = "สินค้า";
             // 
             // stockToolStripMenuItem1
             // 
             this.stockToolStripMenuItem1.Name = "stockToolStripMenuItem1";
             this.stockToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(163, 22);
-            this.stockToolStripMenuItem1.Text = "Stock";
+            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
+            this.stockToolStripMenuItem1.Text = "สต๊อก";
             this.stockToolStripMenuItem1.Click += new System.EventHandler(this.stockToolStripMenuItem1_Click);
             // 
             // salesToolStripMenuItem
             // 
             this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-            this.salesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt)
-                        | System.Windows.Forms.Keys.S)));
-            this.salesToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-            this.salesToolStripMenuItem.Text = "Sales";
+            this.salesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.S)));
+            this.salesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.salesToolStripMenuItem.Text = "การขาย";
             this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
@@ -306,14 +306,14 @@
             this.taskManagerToolStripMenuItem,
             this.mSWordToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.toolsToolStripMenuItem.Text = "เครื่องมือ";
             // 
             // notepadToolStripMenuItem
             // 
             this.notepadToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Notepad1;
             this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
-            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.notepadToolStripMenuItem.Text = "Notepad";
             this.notepadToolStripMenuItem.Click += new System.EventHandler(this.notepadToolStripMenuItem_Click);
             // 
@@ -321,7 +321,7 @@
             // 
             this.calculatorToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.calc;
             this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
-            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.calculatorToolStripMenuItem.Text = "Calculator";
             this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
             // 
@@ -329,7 +329,7 @@
             // 
             this.wordpadToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Wordpad_icon__Windows_7_;
             this.wordpadToolStripMenuItem.Name = "wordpadToolStripMenuItem";
-            this.wordpadToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.wordpadToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.wordpadToolStripMenuItem.Text = "Wordpad";
             this.wordpadToolStripMenuItem.Click += new System.EventHandler(this.wordpadToolStripMenuItem_Click);
             // 
@@ -337,7 +337,7 @@
             // 
             this.taskManagerToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.task_manager1;
             this.taskManagerToolStripMenuItem.Name = "taskManagerToolStripMenuItem";
-            this.taskManagerToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.taskManagerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.taskManagerToolStripMenuItem.Text = "Task Manager";
             this.taskManagerToolStripMenuItem.Click += new System.EventHandler(this.taskManagerToolStripMenuItem_Click);
             // 
@@ -345,7 +345,7 @@
             // 
             this.mSWordToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.MS_Word_2_icon1;
             this.mSWordToolStripMenuItem.Name = "mSWordToolStripMenuItem";
-            this.mSWordToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.mSWordToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.mSWordToolStripMenuItem.Text = "MS Word";
             this.mSWordToolStripMenuItem.Click += new System.EventHandler(this.mSWordToolStripMenuItem_Click);
             // 
@@ -357,42 +357,42 @@
             this.stockToolStripMenuItem2,
             this.salesToolStripMenuItem1});
             this.recordsToolStripMenuItem.Name = "recordsToolStripMenuItem";
-            this.recordsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.recordsToolStripMenuItem.Text = "Records";
+            this.recordsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.recordsToolStripMenuItem.Text = "บันทึก";
             // 
             // customersToolStripMenuItem
             // 
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.customersToolStripMenuItem.Text = "Customers";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.customersToolStripMenuItem.Text = "ลูกค้า";
             this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem2
             // 
             this.productsToolStripMenuItem2.Name = "productsToolStripMenuItem2";
-            this.productsToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
-            this.productsToolStripMenuItem2.Text = "Products";
+            this.productsToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
+            this.productsToolStripMenuItem2.Text = "สินค้า";
             this.productsToolStripMenuItem2.Click += new System.EventHandler(this.productsToolStripMenuItem2_Click);
             // 
             // stockToolStripMenuItem2
             // 
             this.stockToolStripMenuItem2.Name = "stockToolStripMenuItem2";
-            this.stockToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
-            this.stockToolStripMenuItem2.Text = "Stock";
+            this.stockToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
+            this.stockToolStripMenuItem2.Text = "สต๊อกสินค้า";
             this.stockToolStripMenuItem2.Click += new System.EventHandler(this.stockToolStripMenuItem2_Click);
             // 
             // salesToolStripMenuItem1
             // 
             this.salesToolStripMenuItem1.Name = "salesToolStripMenuItem1";
-            this.salesToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
-            this.salesToolStripMenuItem1.Text = "Sales";
+            this.salesToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.salesToolStripMenuItem1.Text = "การขาย";
             this.salesToolStripMenuItem1.Click += new System.EventHandler(this.salesToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.aboutToolStripMenuItem.Text = "เกี่ยวกับ";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // StatusStrip1
@@ -412,8 +412,8 @@
             // 
             this.ToolStripStatusLabel1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1";
-            this.ToolStripStatusLabel1.Size = new System.Drawing.Size(86, 17);
-            this.ToolStripStatusLabel1.Text = "Logged in As :";
+            this.ToolStripStatusLabel1.Size = new System.Drawing.Size(56, 17);
+            this.ToolStripStatusLabel1.Text = "ผู้ใช้งาน :";
             // 
             // lblUser
             // 
@@ -426,7 +426,7 @@
             // ToolStripStatusLabel3
             // 
             this.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3";
-            this.ToolStripStatusLabel3.Size = new System.Drawing.Size(466, 17);
+            this.ToolStripStatusLabel3.Size = new System.Drawing.Size(496, 17);
             this.ToolStripStatusLabel3.Spring = true;
             // 
             // ToolStripStatusLabel4
@@ -444,15 +444,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -461,62 +463,70 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Location = new System.Drawing.Point(40, 234);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(784, 419);
             this.dataGridView1.TabIndex = 4;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Stock ID";
+            this.Column1.HeaderText = "รหัส";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Product Name";
+            this.Column2.HeaderText = "ชื่อสินค้า";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 200;
             // 
             // Column3
             // 
-            this.Column3.HeaderText = "Features";
+            this.Column3.HeaderText = "รายละเอียด";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
             // 
             // Column4
             // 
-            this.Column4.HeaderText = "Price";
+            this.Column4.HeaderText = "ราคา";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 80;
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Quantity";
+            this.Column5.HeaderText = "จำนวน";
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Width = 70;
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Total Price";
+            this.Column6.HeaderText = "ราคารวม";
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             this.Column6.Width = 90;
             // 
             // Label11
@@ -526,9 +536,9 @@
             this.Label11.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label11.Location = new System.Drawing.Point(41, 115);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(72, 22);
+            this.Label11.Size = new System.Drawing.Size(94, 22);
             this.Label11.TabIndex = 13;
-            this.Label11.Text = "Stock In";
+            this.Label11.Text = "สินค้าคงคลัง";
             // 
             // groupBox2
             // 
@@ -539,7 +549,7 @@
             this.groupBox2.Size = new System.Drawing.Size(322, 82);
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search by Product Name";
+            this.groupBox2.Text = "ค้นหาจากชื่อสินค้า";
             // 
             // txtProductName
             // 
@@ -567,7 +577,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main Menu";
+            this.Text = "ระบบจัดการร้านค้า";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMainMenu_FormClosing);
             this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.menuStrip1.ResumeLayout(false);

@@ -320,7 +320,7 @@
             this.TabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.TabPage3.Size = new System.Drawing.Size(1304, 635);
             this.TabPage3.TabIndex = 2;
-            this.TabPage3.Text = "By Customer";
+            this.TabPage3.Text = "จากลูกค้า";
             this.TabPage3.UseVisualStyleBackColor = true;
             // 
             // GroupBox4
@@ -336,7 +336,7 @@
             this.GroupBox4.Size = new System.Drawing.Size(267, 142);
             this.GroupBox4.TabIndex = 29;
             this.GroupBox4.TabStop = false;
-            this.GroupBox4.Text = "Total";
+            this.GroupBox4.Text = "ผลรวม";
             this.GroupBox4.Visible = false;
             // 
             // TextBox4
@@ -366,9 +366,9 @@
             this.Label6.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label6.Location = new System.Drawing.Point(18, 102);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(90, 18);
+            this.Label6.Size = new System.Drawing.Size(46, 18);
             this.Label6.TabIndex = 23;
-            this.Label6.Text = "Due Payment";
+            this.Label6.Text = "ค่าปรับ";
             // 
             // Label7
             // 
@@ -376,9 +376,9 @@
             this.Label7.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.Location = new System.Drawing.Point(18, 66);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(96, 18);
+            this.Label7.Size = new System.Drawing.Size(60, 18);
             this.Label7.TabIndex = 23;
-            this.Label7.Text = "Total Payment";
+            this.Label7.Text = "ราคารวม";
             // 
             // Label8
             // 
@@ -386,9 +386,9 @@
             this.Label8.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label8.Location = new System.Drawing.Point(18, 31);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(58, 18);
+            this.Label8.Size = new System.Drawing.Size(48, 18);
             this.Label8.TabIndex = 22;
-            this.Label8.Text = "Amount";
+            this.Label8.Text = "จำนวน";
             // 
             // DataGridView3
             // 
@@ -418,7 +418,7 @@
             this.Button7.Name = "Button7";
             this.Button7.Size = new System.Drawing.Size(94, 40);
             this.Button7.TabIndex = 2;
-            this.Button7.Text = "&Export Excel";
+            this.Button7.Text = "&สร้าง Excel";
             this.Button7.UseVisualStyleBackColor = true;
             this.Button7.Click += new System.EventHandler(this.Button7_Click);
             // 
@@ -429,7 +429,7 @@
             this.Button9.Name = "Button9";
             this.Button9.Size = new System.Drawing.Size(94, 40);
             this.Button9.TabIndex = 1;
-            this.Button9.Text = "&Reset";
+            this.Button9.Text = "&รีเซ็ต";
             this.Button9.UseVisualStyleBackColor = true;
             this.Button9.Click += new System.EventHandler(this.Button9_Click);
             // 
@@ -460,9 +460,9 @@
             this.Label16.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label16.Location = new System.Drawing.Point(20, 18);
             this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(107, 18);
+            this.Label16.Size = new System.Drawing.Size(57, 18);
             this.Label16.TabIndex = 9;
-            this.Label16.Text = "Customer Name";
+            this.Label16.Text = "ชื่อลูกค้า";
             // 
             // TabPage2
             // 
@@ -664,7 +664,7 @@
             this.MaximizeBox = false;
             this.Name = "frmSalesRecord1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sales Record";
+            this.Text = "บันทึกการขาย";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSalesRecord_FormClosing);
             this.Load += new System.EventHandler(this.frmSalesRecord_Load);
             this.TabControl1.ResumeLayout(false);

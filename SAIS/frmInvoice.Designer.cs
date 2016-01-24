@@ -82,18 +82,18 @@
             this.Save = new System.Windows.Forms.Button();
             this.txtConfigID = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.txtRemarks = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupBox1.SuspendLayout();
             this.Panel2.SuspendLayout();
             this.Panel1.SuspendLayout();
@@ -108,9 +108,9 @@
             this.Label13.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label13.Location = new System.Drawing.Point(33, 22);
             this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(60, 22);
+            this.Label13.Size = new System.Drawing.Size(66, 22);
             this.Label13.TabIndex = 96;
-            this.Label13.Text = "Billing";
+            this.Label13.Text = "ใบสั่งซื้อ";
             // 
             // Label4
             // 
@@ -118,9 +118,9 @@
             this.Label4.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label4.Location = new System.Drawing.Point(34, 64);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(71, 17);
+            this.Label4.Size = new System.Drawing.Size(79, 17);
             this.Label4.TabIndex = 99;
-            this.Label4.Text = "Invoice No.";
+            this.Label4.Text = "รหัสการสั่งซื้อ.";
             // 
             // Label1
             // 
@@ -128,9 +128,9 @@
             this.Label1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label1.Location = new System.Drawing.Point(34, 128);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(80, 17);
+            this.Label1.Size = new System.Drawing.Size(57, 17);
             this.Label1.TabIndex = 97;
-            this.Label1.Text = "Customer ID";
+            this.Label1.Text = "รหัสลูกค้า";
             // 
             // Label2
             // 
@@ -138,9 +138,9 @@
             this.Label2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label2.Location = new System.Drawing.Point(34, 161);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(98, 17);
+            this.Label2.Size = new System.Drawing.Size(52, 17);
             this.Label2.TabIndex = 98;
-            this.Label2.Text = "Customer Name";
+            this.Label2.Text = "ชื่อลูกค้า";
             // 
             // Label3
             // 
@@ -148,9 +148,9 @@
             this.Label3.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label3.Location = new System.Drawing.Point(34, 96);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(77, 17);
+            this.Label3.Size = new System.Drawing.Size(58, 17);
             this.Label3.TabIndex = 100;
-            this.Label3.Text = "Invoice Date";
+            this.Label3.Text = "วันที่สั่งซื้อ";
             // 
             // txtCustomerName
             // 
@@ -224,7 +224,7 @@
             this.GroupBox1.Size = new System.Drawing.Size(651, 147);
             this.GroupBox1.TabIndex = 107;
             this.GroupBox1.TabStop = false;
-            this.GroupBox1.Text = "Product Details";
+            this.GroupBox1.Text = "ข้อมูลสินค้า";
             // 
             // txtTotalAmount
             // 
@@ -240,9 +240,9 @@
             this.Label11.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label11.Location = new System.Drawing.Point(26, 106);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(57, 17);
+            this.Label11.Size = new System.Drawing.Size(65, 17);
             this.Label11.TabIndex = 89;
-            this.Label11.Text = "Sale Qty.";
+            this.Label11.Text = "จำนวนขาย";
             // 
             // Button7
             // 
@@ -251,7 +251,7 @@
             this.Button7.Name = "Button7";
             this.Button7.Size = new System.Drawing.Size(87, 23);
             this.Button7.TabIndex = 6;
-            this.Button7.Text = "&Add To Cart";
+            this.Button7.Text = "&เพิ่ม";
             this.Button7.UseVisualStyleBackColor = true;
             this.Button7.Click += new System.EventHandler(this.Button7_Click);
             // 
@@ -261,9 +261,9 @@
             this.Label5.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label5.Location = new System.Drawing.Point(26, 33);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(87, 17);
+            this.Label5.Size = new System.Drawing.Size(53, 17);
             this.Label5.TabIndex = 74;
-            this.Label5.Text = "Product Name";
+            this.Label5.Text = "ชื่อสินค้า";
             // 
             // txtProductName
             // 
@@ -279,9 +279,9 @@
             this.Label12.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label12.Location = new System.Drawing.Point(26, 67);
             this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(61, 17);
+            this.Label12.Size = new System.Drawing.Size(78, 17);
             this.Label12.TabIndex = 87;
-            this.Label12.Text = "Unit Price";
+            this.Label12.Text = "ราคาต่อหน่วย";
             // 
             // txtSaleQty
             // 
@@ -299,9 +299,9 @@
             this.Label9.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label9.Location = new System.Drawing.Point(271, 67);
             this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(81, 17);
+            this.Label9.Size = new System.Drawing.Size(76, 17);
             this.Label9.TabIndex = 75;
-            this.Label9.Text = "Available Qty";
+            this.Label9.Text = "จำนวนคงคลัง";
             // 
             // txtPrice
             // 
@@ -317,9 +317,9 @@
             this.Label10.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label10.Location = new System.Drawing.Point(271, 106);
             this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(85, 17);
+            this.Label10.Size = new System.Drawing.Size(28, 17);
             this.Label10.TabIndex = 76;
-            this.Label10.Text = "Total Amount";
+            this.Label10.Text = "รวม";
             // 
             // txtAvailableQty
             // 
@@ -355,30 +355,30 @@
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Config ID";
+            this.columnHeader6.Text = "รหัส";
             this.columnHeader6.Width = 80;
             // 
             // ColumnHeader2
             // 
-            this.ColumnHeader2.Text = "Product Name";
+            this.ColumnHeader2.Text = "ชื่อสินค้า";
             this.ColumnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ColumnHeader2.Width = 270;
             // 
             // ColumnHeader3
             // 
-            this.ColumnHeader3.Text = "Unit Price";
+            this.ColumnHeader3.Text = "ราคาต่อหน่วย";
             this.ColumnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ColumnHeader3.Width = 90;
             // 
             // ColumnHeader4
             // 
-            this.ColumnHeader4.Text = "Qty.";
+            this.ColumnHeader4.Text = "จำนวน";
             this.ColumnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ColumnHeader4.Width = 85;
             // 
             // ColumnHeader5
             // 
-            this.ColumnHeader5.Text = "Total Amount";
+            this.ColumnHeader5.Text = "รวม";
             this.ColumnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ColumnHeader5.Width = 120;
             // 
@@ -428,9 +428,9 @@
             this.Label19.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label19.Location = new System.Drawing.Point(18, 150);
             this.Label19.Name = "Label19";
-            this.Label19.Size = new System.Drawing.Size(83, 17);
+            this.Label19.Size = new System.Drawing.Size(42, 17);
             this.Label19.TabIndex = 96;
-            this.Label19.Text = "Payment Due";
+            this.Label19.Text = "ค่าปรับ";
             // 
             // payment
             // 
@@ -438,9 +438,9 @@
             this.payment.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payment.Location = new System.Drawing.Point(18, 116);
             this.payment.Name = "payment";
-            this.payment.Size = new System.Drawing.Size(89, 17);
+            this.payment.Size = new System.Drawing.Size(64, 17);
             this.payment.TabIndex = 95;
-            this.payment.Text = "Total Payment";
+            this.payment.Text = "รวมเป็นเงิน";
             // 
             // txtTotal
             // 
@@ -457,9 +457,9 @@
             this.Label16.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label16.Location = new System.Drawing.Point(19, 83);
             this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(75, 17);
+            this.Label16.Size = new System.Drawing.Size(76, 17);
             this.Label16.TabIndex = 94;
-            this.Label16.Text = "Grand Total";
+            this.Label16.Text = "ราคารวมภาษี";
             // 
             // txtTaxAmt
             // 
@@ -498,9 +498,9 @@
             this.Label15.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label15.Location = new System.Drawing.Point(19, 50);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(55, 17);
+            this.Label15.Size = new System.Drawing.Size(80, 17);
             this.Label15.TabIndex = 90;
-            this.Label15.Text = "VAT+ST";
+            this.Label15.Text = "ภาษีมูลค่าเพิ่ม";
             // 
             // txtSubTotal
             // 
@@ -516,9 +516,9 @@
             this.Label14.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label14.Location = new System.Drawing.Point(19, 16);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(61, 17);
+            this.Label14.Size = new System.Drawing.Size(56, 17);
             this.Label14.TabIndex = 77;
-            this.Label14.Text = "Sub Total";
+            this.Label14.Text = "ราคาสุทธิ";
             // 
             // btnRemove
             // 
@@ -528,7 +528,7 @@
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(86, 29);
             this.btnRemove.TabIndex = 110;
-            this.btnRemove.Text = "&Remove";
+            this.btnRemove.Text = "&ลบ";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
@@ -540,7 +540,7 @@
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(99, 29);
             this.btnPrint.TabIndex = 111;
-            this.btnPrint.Text = "&Print Invoice";
+            this.btnPrint.Text = "&พิมพ์ใบสั่งซื้อ";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -564,7 +564,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(84, 29);
             this.btnUpdate.TabIndex = 100;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&ปรับปรุง";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -575,7 +575,7 @@
             this.NewRecord.Name = "NewRecord";
             this.NewRecord.Size = new System.Drawing.Size(84, 29);
             this.NewRecord.TabIndex = 0;
-            this.NewRecord.Text = "&New";
+            this.NewRecord.Text = "&สร้างใหม่";
             this.NewRecord.UseVisualStyleBackColor = true;
             this.NewRecord.Click += new System.EventHandler(this.NewRecord_Click);
             // 
@@ -587,7 +587,7 @@
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(84, 29);
             this.Delete.TabIndex = 3;
-            this.Delete.Text = "&Delete";
+            this.Delete.Text = "&ลบ";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
@@ -598,7 +598,7 @@
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(84, 29);
             this.Save.TabIndex = 1;
-            this.Save.Text = "&Save";
+            this.Save.Text = "&บันทึก";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
@@ -630,42 +630,6 @@
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Stock ID";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 70;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Config ID";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 60;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Product Name";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 160;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Features";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Price";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 70;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Quantity";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 70;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox1);
@@ -674,7 +638,7 @@
             this.groupBox2.Size = new System.Drawing.Size(322, 82);
             this.groupBox2.TabIndex = 116;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search by Product Name";
+            this.groupBox2.Text = "ค้นหาจากชื่อสินค้า";
             // 
             // textBox1
             // 
@@ -715,7 +679,43 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 17);
             this.label7.TabIndex = 119;
-            this.label7.Text = "Remarks";
+            this.label7.Text = "หมายเหตุ";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "รหัสสต๊อก";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 70;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "รหัสสินค้า";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 60;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ชื่อสินค้า";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 160;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "รายละเอียด";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 150;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "ราคา";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "จำนวน";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 70;
             // 
             // frmInvoice
             // 
@@ -753,7 +753,7 @@
             this.MaximizeBox = false;
             this.Name = "frmInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sales";
+            this.Text = "การขาย";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInvoice_FormClosing);
             this.Load += new System.EventHandler(this.frmInvoice_Load);
             this.GroupBox1.ResumeLayout(false);
@@ -822,12 +822,6 @@
         public System.Windows.Forms.TextBox txtCustomerID;
         public System.Windows.Forms.TextBox txtConfigID;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Timer timer1;
@@ -835,5 +829,11 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.RichTextBox txtRemarks;
         public System.Windows.Forms.ListView ListView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
