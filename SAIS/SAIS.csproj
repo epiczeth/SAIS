@@ -8,7 +8,7 @@
     <ProjectGuid>{B03A3D65-EF0F-44CA-B801-984AEFCB078D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sales_and_Inventory_System__Gadgets_Shop_</RootNamespace>
+    <RootNamespace>SAIS</RootNamespace>
     <AssemblyName>SAIS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
@@ -59,7 +59,7 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Sales_and_Inventory_System__Gadgets_Shop_.Program</StartupObject>
+    <StartupObject>SAIS.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />

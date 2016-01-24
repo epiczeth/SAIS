@@ -1,4 +1,4 @@
-﻿namespace Sales_and_Inventory_System__Gadgets_Shop_
+﻿namespace SAIS
 {
     partial class frmConfig
     {
@@ -82,7 +82,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources._12;
+            this.pictureBox1.Image = global::SAIS.Properties.Resources._12;
             this.pictureBox1.Location = new System.Drawing.Point(695, 73);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(244, 309);

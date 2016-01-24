@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Sales_and_Inventory_System__Gadgets_Shop_.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAIS.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="SIS_DBConnectionString" Type="(Connection string)" Scope="Application">

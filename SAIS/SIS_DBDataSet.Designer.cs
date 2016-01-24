@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Sales_and_Inventory_System__Gadgets_Shop_ {
+namespace SAIS {
     
     
     /// <summary>
@@ -5746,7 +5746,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_ {
         }
     }
 }
-namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
+namespace SAIS.SIS_DBDataSetTableAdapters {
     
     
     /// <summary>
@@ -5894,7 +5894,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6201,7 +6201,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6529,7 +6529,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6969,7 +6969,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7650,7 +7650,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8047,7 +8047,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8500,7 +8500,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9013,7 +9013,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9641,7 +9641,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10051,7 +10051,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.SIS_DBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Settings.Default.SIS_DBConnectionString;
+            this._connection.ConnectionString = global::SAIS.Properties.Settings.Default.SIS_DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

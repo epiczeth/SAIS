@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Security.Cryptography;
 
-namespace Sales_and_Inventory_System__Gadgets_Shop_
+namespace SAIS
 {
     public partial class frmCustomers : Form
     {
