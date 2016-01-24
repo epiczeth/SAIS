@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Net.Mail;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmRecoveryPassword : Form
     {
-         String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
 
         public frmRecoveryPassword()
         {
@@ -21,53 +19,54 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "")
+            if (txtEmail.Text == string.Empty)
             {
-                MessageBox.Show("Enter your email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ระบุอีเมล์", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail.Focus();
                 return;
             }
             try
             {
-                 Cursor = Cursors.WaitCursor;
-                 timer1.Enabled = true;
-                DataSet ds = new DataSet();
-                OleDbConnection con = new OleDbConnection(cs);
+                Cursor = Cursors.WaitCursor;
+                timer1.Enabled = true;
+                var ds = new DataSet();
+                var con = new OleDbConnection(cs);
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT User_Password FROM Registration Where Email = '" + txtEmail.Text + "'", con);
+                var cmd = new OleDbCommand("SELECT User_Password FROM Registration Where Email = '" + txtEmail.Text + "'", con);
 
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                var da = new OleDbDataAdapter(cmd);
                 da.Fill(ds);
                 con.Close();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-                    MailMessage Msg = new MailMessage();
-                    // Sender e-mail address.
+                    var Msg = new MailMessage();
+
                     Msg.From = new MailAddress("abcd@gmail.com");
-                    // Recipient e-mail address.
+
                     Msg.To.Add(txtEmail.Text);
-                    Msg.Subject = "Your Password Details";
-                    Msg.Body = "Your Password: " + Convert.ToString(ds.Tables[0].Rows[0]["user_Password"]) + "";
+                    Msg.Subject = "ข้อมูลรหัสผ่านของคุณ";
+                    Msg.Body = "รหัสผ่านของคุณ: " + Convert.ToString(ds.Tables[0].Rows[0]["user_Password"]) + string.Empty;
                     Msg.IsBodyHtml = true;
-                    // your remote SMTP server IP.
-                    SmtpClient smtp = new SmtpClient();
+
+                    var smtp = new SmtpClient();
                     smtp.Host = "smtp.gmail.com";
                     smtp.Port = 587;
                     smtp.Credentials = new System.Net.NetworkCredential("abcd@gmail.com", "abcd");
                     smtp.EnableSsl = true;
                     smtp.Send(Msg);
-                    MessageBox.Show(("Password Successfully sent " + ("\r\n" + "Please check your mail")), "Thank you", MessageBoxButtons.OK, MessageBoxIcon.Information); this.Hide();
-                    frmLogin LoginForm1 = new frmLogin();
+                    MessageBox.Show(("รหัสผ่านได้ถูกส่งไปที่อีเมล์คุณแล้ว " + ("\r\n" + "กรุณาตรวจสอบอีเมล์ของท่าน")), "ขอบคุณ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Hide();
+                    var LoginForm1 = new frmLogin();
                     LoginForm1.Show();
-                    LoginForm1.txtUserName.Text = "";
-                    LoginForm1.txtPassword.Text = "";
+                    LoginForm1.txtUserName.Text = string.Empty;
+                    LoginForm1.txtPassword.Text = string.Empty;
                     LoginForm1.ProgressBar1.Visible = false;
                     LoginForm1.txtUserName.Focus();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -78,11 +77,10 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void RecoveryPassword_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-            this.Hide();
-            frmLogin frm = new frmLogin();
-            frm.txtUserName.Text = "";
-            frm.txtPassword.Text = "";
+            Hide();
+            var frm = new frmLogin();
+            frm.txtUserName.Text = string.Empty;
+            frm.txtPassword.Text = string.Empty;
             frm.txtUserName.Focus();
             frm.Show();
         }
@@ -90,9 +88,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         private void timer1_Tick(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
-           timer1.Enabled = false;
+            timer1.Enabled = false;
         }
-
-       
     }
 }

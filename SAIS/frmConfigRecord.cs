@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmConfigRecord : Form
     {
-        OleDbDataReader rdr = null;
-        OleDbConnection con = null;
-        OleDbCommand cmd = null;
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private OleDbDataReader rdr = null;
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         public frmConfigRecord()
         {
             InitializeComponent();
@@ -30,13 +29,13 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 dataGridView1.Rows.Clear();
                 while (rdr.Read() == true)
                 {
-                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2],rdr[3]);
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2], rdr[3]);
                 }
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void frmConfigRecord_Load(object sender, EventArgs e)
@@ -61,29 +60,28 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            string strRowNumber = (e.RowIndex + 1).ToString();
-            SizeF size = e.Graphics.MeasureString(strRowNumber, this.Font);
+            var strRowNumber = (e.RowIndex + 1).ToString();
+            var size = e.Graphics.MeasureString(strRowNumber, Font);
             if (dataGridView1.RowHeadersWidth < Convert.ToInt32((size.Width + 20)))
             {
                 dataGridView1.RowHeadersWidth = Convert.ToInt32((size.Width + 20));
             }
-            Brush b = SystemBrushes.ControlText;
-            e.Graphics.DrawString(strRowNumber, this.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2));
-     
+            var b = SystemBrushes.ControlText;
+            e.Graphics.DrawString(strRowNumber, Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2));
         }
 
-     
-    
+
+
         private void frmConfigRecord_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
-            frmStock frm = new frmStock();
+            Hide();
+            var frm = new frmStock();
             frm.label8.Text = label1.Text;
             frm.Show();
         }
@@ -92,10 +90,10 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             try
             {
-                DataGridViewRow dr = dataGridView1.SelectedRows[0];
-                this.Hide();
-               
-                frmStock frm = new frmStock();
+                var dr = dataGridView1.SelectedRows[0];
+                Hide();
+
+                var frm = new frmStock();
                 frm.Show();
                 frm.txtConfigID.Text = dr.Cells[0].Value.ToString();
                 frm.txtProductname.Text = dr.Cells[1].Value.ToString();
@@ -103,12 +101,11 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 frm.txtPrice.Text = dr.Cells[3].Value.ToString();
                 frm.label8.Text = label1.Text;
                 frm.txtQty.Focus();
-               
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

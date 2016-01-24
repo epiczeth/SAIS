@@ -1,66 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using Excel = Microsoft.Office.Interop.Excel;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmCustomersRecord : Form
     {
-      
-        OleDbConnection con = null;
-        DataSet ds = new DataSet();
-        OleDbCommand cmd = null;
-        DataTable dt = new DataTable();
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         public frmCustomersRecord()
         {
             InitializeComponent();
         }
         public void GetData()
         {
-                try{
+            try
+            {
                 con = new OleDbConnection(cs);
                 con.Open();
                 cmd = new OleDbCommand( "SELECT (CustomerID)as [Customer ID],(Customername) as [Customer Name],(address) as [Address],(landmark) as [Landmark],(city) as [City],(state) as [State],(zipcode) as [Zip/Post Code],(Phone) as [Phone],(email) as [Email],(mobileno) as [Mobile No],(faxno) as [Fax No],(notes) as [Notes] from Customer order by CustomerName", con);
-                OleDbDataAdapter myDA = new OleDbDataAdapter(cmd);
-                DataSet myDataSet = new DataSet();
+                var myDA = new OleDbDataAdapter(cmd);
+                var myDataSet = new DataSet();
                 myDA.Fill(myDataSet, "Customer");
                 dataGridView1.DataSource = myDataSet.Tables["Customer"].DefaultView;
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-       }
+        }
 
         private void frmCustomersRecord_Load(object sender, EventArgs e)
         {
             GetData();
         }
-         
-    
+
+
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            string strRowNumber = (e.RowIndex + 1).ToString();
-            SizeF size = e.Graphics.MeasureString(strRowNumber, this.Font);
+            var strRowNumber = (e.RowIndex + 1).ToString();
+            var size = e.Graphics.MeasureString(strRowNumber, Font);
             if (dataGridView1.RowHeadersWidth < Convert.ToInt32((size.Width + 20)))
             {
                 dataGridView1.RowHeadersWidth = Convert.ToInt32((size.Width + 20));
             }
-            Brush b = SystemBrushes.ControlText;
-            e.Graphics.DrawString(strRowNumber, this.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2));
-     
+            var b = SystemBrushes.ControlText;
+            e.Graphics.DrawString(strRowNumber, Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2));
         }
 
-      
+
 
         private void txtCustomers_TextChanged(object sender, EventArgs e)
         {
@@ -69,16 +65,16 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
                 cmd = new OleDbCommand("SELECT (CustomerID)as [Customer ID],(Customername) as [Customer Name],(address) as [Address],(landmark) as [Landmark],(city) as [City],(state) as [State],(zipcode) as [Zip/Post Code],(Phone) as [Phone],(email) as [Email],(mobileno) as [Mobile No],(faxno) as [Fax No],(notes) as [Notes] from Customer where CustomerName like '" + txtCustomers.Text + "%' order by CustomerName", con);
-                OleDbDataAdapter myDA = new OleDbDataAdapter(cmd);
-                DataSet myDataSet = new DataSet();
+                var myDA = new OleDbDataAdapter(cmd);
+                var myDataSet = new DataSet();
                 myDA.Fill(myDataSet, "Customer");
                 dataGridView1.DataSource = myDataSet.Tables["Customer"].DefaultView;
-              
+
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -86,21 +82,21 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             if (dataGridView1.DataSource == null)
             {
-                MessageBox.Show("Sorry nothing to export into excel sheet..", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ไม่มีข้อมูลในการสร้างไฟล์ Excel", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            int rowsTotal = 0;
-            int colsTotal = 0;
-            int I = 0;
-            int j = 0;
-            int iC = 0;
+            var rowsTotal = 0;
+            var colsTotal = 0;
+            var I = 0;
+            var j = 0;
+            var iC = 0;
             System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
-            Excel.Application xlApp = new Excel.Application();
+            var xlApp = new Excel.Application();
 
             try
             {
-                Excel.Workbook excelBook = xlApp.Workbooks.Add();
-                Excel.Worksheet excelWorksheet = (Excel.Worksheet)excelBook.Worksheets[1];
+                var excelBook = xlApp.Workbooks.Add();
+                var excelWorksheet = (Excel.Worksheet)excelBook.Worksheets[1];
                 xlApp.Visible = true;
 
                 rowsTotal = dataGridView1.RowCount - 1;
@@ -129,11 +125,10 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                //RELEASE ALLOACTED RESOURCES
                 System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default;
                 xlApp = null;
             }
@@ -145,12 +140,12 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 Cursor = Cursors.WaitCursor;
                 timer1.Enabled = true;
-                rptCustomers rpt = new rptCustomers();
-                //The report you created.
+                var rpt = new rptCustomers();
+
                 cmd = new OleDbCommand();
-                OleDbDataAdapter myDA = new OleDbDataAdapter();
-                SIS_DBDataSet myDS = new SIS_DBDataSet();
-                //The DataSet you created.
+                var myDA = new OleDbDataAdapter();
+                var myDS = new SIS_DBDataSet();
+
                 con = new OleDbConnection(cs);
                 cmd.Connection = con;
                 cmd.CommandText = "SELECT * from Customer order by CustomerName";
@@ -158,19 +153,18 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 myDA.SelectCommand = cmd;
                 myDA.Fill(myDS, "Customer");
                 rpt.SetDataSource(myDS);
-                frmCustomersReport frm = new frmCustomersReport();
+                var frm = new frmCustomersReport();
                 frm.crystalReportViewer1.ReportSource = rpt;
                 frm.Visible = true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             Cursor = Cursors.Default;
             timer1.Enabled = false;
         }

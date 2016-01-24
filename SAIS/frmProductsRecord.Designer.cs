@@ -145,7 +145,7 @@
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "ประเภท";
+            this.Column2.HeaderText = "ประเภทสินค้า";
             this.Column2.Name = "Column2";
             this.Column2.Width = 200;
             // 

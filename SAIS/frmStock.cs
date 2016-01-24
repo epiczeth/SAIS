@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Security.Cryptography;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmStock : Form
     {
-        OleDbConnection con = null;
-        OleDbCommand cmd = null;
-        OleDbDataReader rdr;
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
+        private OleDbDataReader rdr;
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         public frmStock()
         {
             InitializeComponent();
@@ -27,15 +26,15 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         }
         public static string GetUniqueKey(int maxSize)
         {
-            char[] chars = new char[62];
+            var chars = new char[62];
             chars =
             "123456789".ToCharArray();
-            byte[] data = new byte[1];
-            RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider();
+            var data = new byte[1];
+            var crypto = new RNGCryptoServiceProvider();
             crypto.GetNonZeroBytes(data);
             data = new byte[maxSize];
             crypto.GetNonZeroBytes(data);
-            StringBuilder result = new StringBuilder(maxSize);
+            var result = new StringBuilder(maxSize);
             foreach (byte b in data)
             {
                 result.Append(chars[b % (chars.Length)]);
@@ -53,101 +52,109 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
                 cmd = new OleDbCommand("SELECT StockId as [Stock ID], (productName) as [Product Name],Features,sum(Quantity) as [Quantity],Price,sum(TotalPrice) as [Total Price] from Config,Stock where Config.ConfigID=Stock.ConfigID group by Stockid, productname,features,price having sum(Quantity > 0)  order by Productname", con);
-                OleDbDataAdapter myDA = new OleDbDataAdapter(cmd);
-                DataSet myDataSet = new DataSet();
+                var myDA = new OleDbDataAdapter(cmd);
+                var myDataSet = new DataSet();
                 myDA.Fill(myDataSet, "Stock");
                 myDA.Fill(myDataSet, "Config");
                 dataGridView1.DataSource = myDataSet.Tables["Stock"].DefaultView;
                 dataGridView1.DataSource = myDataSet.Tables["Config"].DefaultView;
                 con.Close();
+                string[] header = new string[]
+                {
+                    "รหัส","ชื่อสินค้า","รายละเอียด","จำนวน","ราคา","รวม"
+                };
+                for (int i = 0; i < header.Length; i++)
+                {
+                    dataGridView1.Columns[i].HeaderText = header[i];
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmConfigRecord frm = new frmConfigRecord();
+            Hide();
+            var frm = new frmConfigRecord();
             frm.label1.Text = label8.Text;
             frm.Show();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtProductname.Text == "")
+            if (txtProductname.Text == string.Empty)
             {
-                MessageBox.Show("Please retrieve product name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาเลือกชื่อสินค้า", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtProductname.Focus();
                 return;
             }
-            if (txtQty.Text == "")
+            if (txtQty.Text == string.Empty)
             {
-                MessageBox.Show("Please enter quantity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุจำนวน", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtQty.Focus();
                 return;
             }
 
             try
             {
-            con = new OleDbConnection(cs);
-            con.Open();
-            String ct = "select ConfigID  from stock where ConfigID=" + txtConfigID.Text +"";
-            cmd = new OleDbCommand(ct);
-            cmd.Connection = con;
-            rdr = cmd.ExecuteReader();
+                con = new OleDbConnection(cs);
+                con.Open();
+                var ct = "select ConfigID  from stock where ConfigID=" + txtConfigID.Text + string.Empty;
+                cmd = new OleDbCommand(ct);
+                cmd.Connection = con;
+                rdr = cmd.ExecuteReader();
 
-            if (rdr.Read()==true) 
+                if (rdr.Read() == true)
                 {
-                MessageBox.Show("Record already exists" + "\n" + "please update the stock of product", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("มีข้อมูลนี้อยู่แล้ว" + "\n" + "กรุณาอัพเดทฐานข้อมูล", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                if ((rdr != null))
-                {
-                    rdr.Close();
-                }
-                return;
+                    if ((rdr != null))
+                    {
+                        rdr.Close();
+                    }
+                    return;
                 }
                 auto();
                 con = new OleDbConnection(cs);
                 con.Open();
-                string cb = "insert into Stock(StockID,ConfigID,Quantity,Totalprice,StockDate) VALUES ('" + txtStockID.Text + "'," + txtConfigID.Text + "," + txtQty.Text + "," + txtTotalPrice.Text +",#" + dtpStockDate.Value + "#)";
+                var cb = "insert into Stock(StockID,ConfigID,Quantity,Totalprice,StockDate) VALUES ('" + txtStockID.Text + "'," + txtConfigID.Text + "," + txtQty.Text + "," + txtTotalPrice.Text + ",#" + dtpStockDate.Value + "#)";
                 cmd = new OleDbCommand(cb);
                 cmd.Connection = con;
                 cmd.ExecuteReader();
                 con.Close();
-                MessageBox.Show("Successfully saved", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("บันทึกข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = false;
                 GetData();
-                frmMainMenu frm = new frmMainMenu();
+                var frm = new frmMainMenu();
                 frm.GetData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
-            int val1 = 0;
-            int val2 = 0;
+            var val1 = 0;
+            var val2 = 0;
             int.TryParse(txtPrice.Text, out val1);
             int.TryParse(txtQty.Text, out val2);
-            int I = (val1 * val2);
+            var I = (val1 * val2);
             txtTotalPrice.Text = I.ToString();
         }
         private void Reset()
         {
-            txtPrice.Text = "";
-            txtFeatures.Text = "";
-            txtProductname.Text = "";
-            txtQty.Text = "";
-            txtTotalPrice.Text = "";
-            txtStockID.Text = "";
+            txtPrice.Text = string.Empty;
+            txtFeatures.Text = string.Empty;
+            txtProductname.Text = string.Empty;
+            txtQty.Text = string.Empty;
+            txtTotalPrice.Text = string.Empty;
+            txtStockID.Text = string.Empty;
             dtpStockDate.Text = DateTime.Today.ToString();
-            txtProduct.Text = "";
+            txtProduct.Text = string.Empty;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
             btnSave.Enabled = true;
@@ -160,59 +167,55 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete this record?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("คุณต้องการลบข้อมูลนี้จริงหรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 delete_records();
             }
         }
         private void delete_records()
         {
-
             try
             {
-
-                int RowsAffected = 0;
+                var RowsAffected = 0;
                 con = new OleDbConnection(cs);
                 con.Open();
-                string cq = "delete from Stock where StockID='" + txtStockID.Text + "'";
+                var cq = "delete from Stock where StockID='" + txtStockID.Text + "'";
                 cmd = new OleDbCommand(cq);
                 cmd.Connection = con;
                 RowsAffected = cmd.ExecuteNonQuery();
                 if (RowsAffected > 0)
                 {
-                    MessageBox.Show("Successfully deleted", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ลบข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                 }
                 else
                 {
-                    MessageBox.Show("No Record found", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ข้อมูลดังกล่าวไม่มีอยู่จริง", "ขออภัย", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                 }
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
                 }
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void frmStock_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
-            frmMainMenu frm = new frmMainMenu();
+            Hide();
+            var frm = new frmMainMenu();
             frm.lblUser.Text = label8.Text;
             frm.Show();
         }
 
         private void btnGetData_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmStockRecord1 frm = new frmStockRecord1();
+            Hide();
+            var frm = new frmStockRecord1();
             frm.label1.Text = label8.Text;
             frm.Show();
             frm.GetData();
@@ -225,8 +228,8 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
                 cmd = new OleDbCommand("SELECT StockId as [Stock ID], (productName) as [Product Name],Features,sum(Quantity) as [Quantity],Price,sum(TotalPrice) as [Total Price] from Config,Stock where Config.ConfigID=Stock.ConfigID and productname like '" + txtProduct.Text + "%' group by Stockid, productname,features,price having sum(quantity > 0)  order by Productname", con);
-                OleDbDataAdapter myDA = new OleDbDataAdapter(cmd);
-                DataSet myDataSet = new DataSet();
+                var myDA = new OleDbDataAdapter(cmd);
+                var myDataSet = new DataSet();
                 myDA.Fill(myDataSet, "Stock");
                 myDA.Fill(myDataSet, "Config");
                 dataGridView1.DataSource = myDataSet.Tables["Stock"].DefaultView;
@@ -235,7 +238,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -243,30 +246,29 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             try
             {
-         
                 con = new OleDbConnection(cs);
                 con.Open();
-                string cb = "Update Stock set ConfigID=" + txtConfigID.Text + ",Quantity=" + txtQty.Text + ",Totalprice=" + txtTotalPrice.Text + ",StockDate= #" + dtpStockDate.Value + "# where StockID='" + txtStockID.Text + "'";
+                var cb = "Update Stock set ConfigID=" + txtConfigID.Text + ",Quantity=" + txtQty.Text + ",Totalprice=" + txtTotalPrice.Text + ",StockDate= #" + dtpStockDate.Value + "# where StockID='" + txtStockID.Text + "'";
                 cmd = new OleDbCommand(cb);
                 cmd.Connection = con;
                 cmd.ExecuteReader();
                 con.Close();
-                MessageBox.Show("Successfully updated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ปรับปรุงข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnUpdate.Enabled = false;
                 GetData();
-                frmMainMenu frm = new frmMainMenu();
+                var frm = new frmMainMenu();
                 frm.GetData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmStockRecord1 frm = new frmStockRecord1();
+            Hide();
+            var frm = new frmStockRecord1();
             frm.label1.Text = label8.Text;
             frm.Show();
             frm.GetData();
@@ -283,7 +285,5 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 e.Handled = true;
             }
         }
-
-       
     }
 }

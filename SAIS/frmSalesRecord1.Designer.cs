@@ -368,7 +368,7 @@
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(46, 18);
             this.Label6.TabIndex = 23;
-            this.Label6.Text = "ค่าปรับ";
+            this.Label6.Text = "ส่วนลด";
             // 
             // Label7
             // 

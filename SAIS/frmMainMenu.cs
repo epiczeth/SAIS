@@ -1,31 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
-using System.IO;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmMainMenu : Form
     {
-        OleDbDataReader rdr = null;
-        OleDbConnection con = null;
-        OleDbCommand cmd = null;
+        private OleDbDataReader rdr = null;
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
         {
             get
             {
-                CreateParams myCp = base.CreateParams;
+                var myCp = base.CreateParams;
                 myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
                 return myCp;
             }
         }
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         public frmMainMenu()
         {
             InitializeComponent();
@@ -33,38 +30,37 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCustomers frm = new frmCustomers();
+            var frm = new frmCustomers();
             frm.Show();
         }
 
         private void registrationToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmUserRegistration frm = new frmUserRegistration();
+            var frm = new frmUserRegistration();
             frm.Show();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAbout frm = new frmAbout();
+            var frm = new frmAbout();
             frm.Show();
         }
 
         private void registrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmUserRegistration frm = new frmUserRegistration();
+            var frm = new frmUserRegistration();
             frm.Show();
         }
 
         private void profileEntryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCustomers frm = new frmCustomers();
+            var frm = new frmCustomers();
             frm.Show();
         }
 
         private void productToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            frmProduct frm = new frmProduct();
+            var frm = new frmProduct();
             frm.Show();
         }
 
@@ -95,37 +91,37 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCategory frm = new frmCategory();
+            var frm = new frmCategory();
             frm.Show();
         }
 
         private void companyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCompany frm = new frmCompany();
+            var frm = new frmCompany();
             frm.Show();
         }
 
         private void customersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCustomersRecord frm = new frmCustomersRecord();
+            var frm = new frmCustomersRecord();
             frm.Show();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLogin frm = new frmLogin();
+            Hide();
+            var frm = new frmLogin();
             frm.Show();
-            frm.txtUserName.Text = "";
-            frm.txtPassword.Text = "";
+            frm.txtUserName.Text = string.Empty;
+            frm.txtPassword.Text = string.Empty;
             frm.ProgressBar1.Visible = false;
             frm.txtUserName.Focus();
         }
 
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
-         ToolStripStatusLabel4.Text = System.DateTime.Now.ToString();
-         GetData();
+            ToolStripStatusLabel4.Text = System.DateTime.Now.ToString();
+            GetData();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -135,35 +131,34 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void productsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmProduct frm = new frmProduct();
+            var frm = new frmProduct();
             frm.Show();
         }
 
         private void productsToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmProductsRecord frm = new frmProductsRecord();
+            var frm = new frmProductsRecord();
             frm.Show();
         }
 
         private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConfig frm = new frmConfig();
+            var frm = new frmConfig();
             frm.Show();
-
         }
 
         private void stockToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmStock frm = new frmStock();
+            Hide();
+            var frm = new frmStock();
             frm.label8.Text = lblUser.Text;
             frm.Show();
         }
 
         private void stockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmStock frm = new frmStock();
+            Hide();
+            var frm = new frmStock();
             frm.label8.Text = lblUser.Text;
             frm.Show();
         }
@@ -174,7 +169,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 con = new OleDbConnection(cs);
                 con.Open();
-                String sql = "SELECT StockID,ProductName,Features,Price,sum(Quantity),sum(Totalprice) from Stock,Config where Stock.ConfigID=Config.ConfigID group by StockID,productname,Price,Features having sum(quantity > 0) order by ProductName";
+                var sql = "SELECT StockID,ProductName,Features,Price,sum(Quantity),sum(Totalprice) from Stock,Config where Stock.ConfigID=Config.ConfigID group by StockID,productname,Price,Features having sum(quantity > 0) order by ProductName";
                 cmd = new OleDbCommand(sql, con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 dataGridView1.Rows.Clear();
@@ -186,50 +181,51 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void stockToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmStockRecord frm = new frmStockRecord();
+            var frm = new frmStockRecord();
             frm.Show();
         }
 
         private void invoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmInvoice frm = new frmInvoice();
+            Hide();
+            var frm = new frmInvoice();
             frm.label6.Text = lblUser.Text;
             frm.Show();
         }
 
         private void salesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmInvoice frm = new frmInvoice();
+            Hide();
+            var frm = new frmInvoice();
             frm.label6.Text = lblUser.Text;
             frm.Show();
         }
 
         private void salesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmSalesRecord frm = new frmSalesRecord();
+            var frm = new frmSalesRecord();
             frm.Show();
         }
 
         private void loginDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLoginDetails frm = new frmLoginDetails();
+            var frm = new frmLoginDetails();
             frm.Show();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            try{
-            con = new OleDbConnection(cs);
+            try
+            {
+                con = new OleDbConnection(cs);
                 con.Open();
-                String sql = "SELECT StockID,ProductName,Features,Price,sum(Quantity),sum(Totalprice) from Stock,Config where Stock.ConfigID=Config.ConfigID and ProductName like '" + txtProductName.Text + "%' group by StockID,productname,Price,Features having sum(quantity > 0) order by ProductName";
+                var sql = "SELECT StockID,ProductName,Features,Price,sum(Quantity),sum(Totalprice) from Stock,Config where Stock.ConfigID=Config.ConfigID and ProductName like '" + txtProductName.Text + "%' group by StockID,productname,Price,Features having sum(quantity > 0) order by ProductName";
                 cmd = new OleDbCommand(sql, con);
                 rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
                 dataGridView1.Rows.Clear();
@@ -241,16 +237,13 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void frmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Dispose();
-            
+            Dispose();
         }
-
-      
     }
 }

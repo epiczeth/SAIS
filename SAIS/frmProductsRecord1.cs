@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using Excel = Microsoft.Office.Interop.Excel;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmProductsRecord1 : Form
     {
-        OleDbDataReader rdr = null;
-        OleDbConnection con = null;
-        OleDbCommand cmd = null;
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private OleDbDataReader rdr = null;
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         public frmProductsRecord1()
         {
             InitializeComponent();
@@ -31,13 +30,13 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 dataGridView1.Rows.Clear();
                 while (rdr.Read() == true)
                 {
-                    dataGridView1.Rows.Add(rdr[0],rdr[1],rdr[2]);
+                    dataGridView1.Rows.Add(rdr[0], rdr[1], rdr[2]);
                 }
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void frmProductsRecord_Load(object sender, EventArgs e)
@@ -62,7 +61,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -83,7 +82,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -104,24 +103,24 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            int rowsTotal = 0;
-            int colsTotal = 0;
-            int I = 0;
-            int j = 0;
-            int iC = 0;
+            var rowsTotal = 0;
+            var colsTotal = 0;
+            var I = 0;
+            var j = 0;
+            var iC = 0;
             System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
-            Excel.Application xlApp = new Excel.Application();
+            var xlApp = new Excel.Application();
 
             try
             {
-                Excel.Workbook excelBook = xlApp.Workbooks.Add();
-                Excel.Worksheet excelWorksheet = (Excel.Worksheet)excelBook.Worksheets[1];
+                var excelBook = xlApp.Workbooks.Add();
+                var excelWorksheet = (Excel.Worksheet)excelBook.Worksheets[1];
                 xlApp.Visible = true;
 
                 rowsTotal = dataGridView1.RowCount - 1;
@@ -150,11 +149,10 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                //RELEASE ALLOACTED RESOURCES
                 System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default;
                 xlApp = null;
             }
@@ -162,31 +160,30 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void frmProductsRecord_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Hide();
-            frmProduct frm = new frmProduct();
+            Hide();
+            var frm = new frmProduct();
             frm.Show();
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            string strRowNumber = (e.RowIndex + 1).ToString();
-            SizeF size = e.Graphics.MeasureString(strRowNumber, this.Font);
+            var strRowNumber = (e.RowIndex + 1).ToString();
+            var size = e.Graphics.MeasureString(strRowNumber, Font);
             if (dataGridView1.RowHeadersWidth < Convert.ToInt32((size.Width + 20)))
             {
                 dataGridView1.RowHeadersWidth = Convert.ToInt32((size.Width + 20));
             }
-            Brush b = SystemBrushes.ControlText;
-            e.Graphics.DrawString(strRowNumber, this.Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2));
-     
+            var b = SystemBrushes.ControlText;
+            e.Graphics.DrawString(strRowNumber, Font, b, e.RowBounds.Location.X + 15, e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2));
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {
-                DataGridViewRow dr = dataGridView1.SelectedRows[0];
-                this.Hide();
-                frmProduct frm = new frmProduct();
+                var dr = dataGridView1.SelectedRows[0];
+                Hide();
+                var frm = new frmProduct();
                 frm.Show();
                 frm.txtProductName.Text = dr.Cells[0].Value.ToString();
                 frm.textBox1.Text = dr.Cells[0].Value.ToString();
@@ -200,10 +197,8 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
     }
 }

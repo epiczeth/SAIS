@@ -158,7 +158,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "เปลี่ยนรหัสผ่าน";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChangePassword_FormClosing);
-            this.Load += new System.EventHandler(this.frmChangePassword_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

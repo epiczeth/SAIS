@@ -430,7 +430,7 @@
             this.Label19.Name = "Label19";
             this.Label19.Size = new System.Drawing.Size(42, 17);
             this.Label19.TabIndex = 96;
-            this.Label19.Text = "ค่าปรับ";
+            this.Label19.Text = "ส่วนลด";
             // 
             // payment
             // 

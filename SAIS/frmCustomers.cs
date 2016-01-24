@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Security.Cryptography;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmCustomers : Form
     {
-        OleDbDataReader rdr = null;
-        OleDbConnection con = null;
-        OleDbCommand cmd = null;
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private OleDbDataReader rdr = null;
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
 
         public frmCustomers()
         {
@@ -23,27 +23,22 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         }
         private void Reset()
         {
-            txtAddress.Text = "";
-            txtCity.Text = "";
-            txtEmail.Text = "";
-            txtFaxNo.Text = "";
-            txtCustomerName.Text = "";
-            txtLandmark.Text = "";
-            txtMobileNo.Text = "";
-            txtNotes.Text = "";
-            txtPhone.Text = "";
-            txtCustomerID.Text = "";
-            txtZipCode.Text = "";
-            cmbState.Text = "";
+            txtAddress.Text = string.Empty;
+            txtCity.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtFaxNo.Text = string.Empty;
+            txtCustomerName.Text = string.Empty;
+            txtLandmark.Text = string.Empty;
+            txtMobileNo.Text = string.Empty;
+            txtNotes.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            txtCustomerID.Text = string.Empty;
+            txtZipCode.Text = string.Empty;
+            cmbState.Text = string.Empty;
             btnSave.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
             txtCustomerName.Focus();
-
-        }
-        private void frmCustomers_Load(object sender, EventArgs e)
-        {
-
         }
         private void auto()
         {
@@ -51,14 +46,14 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         }
         public static string GetUniqueKey(int maxSize)
         {
-            char[] chars = new char[62];
+            var chars = new char[62];
             chars = "123456789".ToCharArray();
-            byte[] data = new byte[1];
-            RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider();
+            var data = new byte[1];
+            var crypto = new RNGCryptoServiceProvider();
             crypto.GetNonZeroBytes(data);
             data = new byte[maxSize];
             crypto.GetNonZeroBytes(data);
-            StringBuilder result = new StringBuilder(maxSize);
+            var result = new StringBuilder(maxSize);
             foreach (byte b in data)
             {
                 result.Append(chars[b % (chars.Length)]);
@@ -69,7 +64,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             if (txtZipCode.TextLength > 6)
             {
-                MessageBox.Show("Only 6 digits are allowed", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("สามารถใช้ได้เพียง 6 ตัวอักษร", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtZipCode.Focus();
             }
         }
@@ -90,7 +85,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             if (txtMobileNo.TextLength > 10)
             {
-                MessageBox.Show("Only 10 digits are allowed", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("สามารถใช้ได้เพียง 10 ตัวอักษร", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMobileNo.Focus();
             }
         }
@@ -114,42 +109,42 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtCustomerName.Text == "")
+            if (txtCustomerName.Text == string.Empty)
             {
-                MessageBox.Show("Please enter name", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุชื่อ", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCustomerName.Focus();
                 return;
             }
 
-            if (txtAddress.Text == "")
+            if (txtAddress.Text == string.Empty)
             {
-                MessageBox.Show("Please enter address", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุที่อยู่", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtAddress.Focus();
                 return;
             }
-            if (txtCity.Text == "")
+            if (txtCity.Text == string.Empty)
             {
-                MessageBox.Show("Please enter city", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุเมือง", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCity.Focus();
                 return;
             }
-            if (cmbState.Text == "")
+            if (cmbState.Text == string.Empty)
             {
-                MessageBox.Show("Please select state", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุจังหวัด", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cmbState.Focus();
                 return;
             }
-            if (txtZipCode.Text == "")
+            if (txtZipCode.Text == string.Empty)
             {
-                MessageBox.Show("Please enter zip/post code", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุรหัสไปรษณีย์", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtZipCode.Focus();
                 return;
             }
 
 
-            if (txtMobileNo.Text == "")
+            if (txtMobileNo.Text == string.Empty)
             {
-                MessageBox.Show("Please enter mobile no.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุเบอร์โทร", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMobileNo.Focus();
                 return;
             }
@@ -159,7 +154,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 auto();
                 con = new OleDbConnection(cs);
                 con.Open();
-                string ct = "select CustomerID from Customer where CustomerID=@find";
+                var ct = "select CustomerID from Customer where CustomerID=@find";
 
                 cmd = new OleDbCommand(ct);
                 cmd.Connection = con;
@@ -169,23 +164,19 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                 if (rdr.Read())
                 {
-                    MessageBox.Show("Customer ID Already Exists", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("รหัสลูกค้านี้มีอยู่แล้ว", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     if ((rdr != null))
                     {
                         rdr.Close();
                     }
-
-
                 }
                 else
                 {
-
-
                     con = new OleDbConnection(cs);
                     con.Open();
 
-                    string cb = "insert into Customer(CustomerID,Customername,address,landmark,city,state,zipcode,Phone,email,mobileno,faxno,notes) VALUES (@d1,@d2,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13)";
+                    var cb = "insert into Customer(CustomerID,Customername,address,landmark,city,state,zipcode,Phone,email,mobileno,faxno,notes) VALUES (@d1,@d2,@d4,@d5,@d6,@d7,@d8,@d9,@d10,@d11,@d12,@d13)";
 
                     cmd = new OleDbCommand(cb);
 
@@ -227,7 +218,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                     cmd.Parameters["@d13"].Value = txtNotes.Text;
 
                     cmd.ExecuteReader();
-                    MessageBox.Show("Successfully saved", "Customer Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("บันทึกข้อมูลสำเร็จ", "Customer Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnSave.Enabled = false;
                     if (con.State == ConnectionState.Open)
                     {
@@ -236,47 +227,41 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                     con.Close();
                 }
-
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void delete_records()
         {
-
             try
             {
-
-              int RowsAffected = 0;
-              con = new OleDbConnection(cs);
-              con.Open();
-              string cq = "delete from Customer where CustomerID=@DELETE1;";
-              cmd = new OleDbCommand(cq);
-              cmd.Connection = con;
-              cmd.Parameters.Add(new OleDbParameter("@DELETE1", System.Data.OleDb.OleDbType.VarChar, 20, "CustomerID"));
-              cmd.Parameters["@DELETE1"].Value = txtCustomerID.Text;
+                var RowsAffected = 0;
+                con = new OleDbConnection(cs);
+                con.Open();
+                var cq = "delete from Customer where CustomerID=@DELETE1;";
+                cmd = new OleDbCommand(cq);
+                cmd.Connection = con;
+                cmd.Parameters.Add(new OleDbParameter("@DELETE1", System.Data.OleDb.OleDbType.VarChar, 20, "CustomerID"));
+                cmd.Parameters["@DELETE1"].Value = txtCustomerID.Text;
                 RowsAffected = cmd.ExecuteNonQuery();
 
                 if (RowsAffected > 0)
                 {
-                    MessageBox.Show("Successfully deleted", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ลบข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                 }
                 else
                 {
-                    MessageBox.Show("No record found", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ข้อมูลดังกล่าวไม่มีอยู่จริง", "ขออภัย", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                 }
-                    con.Close();
-                
+                con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -284,17 +269,14 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         {
             try
             {
-
-
-                if (MessageBox.Show("Do you really want to delete the record?", "Customer Record", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("คุณต้องการจะลบข้อมูลนี้ใช่หรือไม่?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
                 {
                     delete_records();
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -305,11 +287,11 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
 
-                string cb = "update Customer set Customername = '" + txtCustomerName.Text + "',address= '" + txtAddress.Text + "',landmark= '" + txtLandmark.Text + "',city= '" + txtCity.Text + "',state= '" + cmbState.Text + "',zipcode= '" + txtZipCode.Text + "',Phone= '" + txtPhone.Text + "',email= '" + txtEmail.Text + "',mobileno= '" + txtMobileNo.Text + "',faxno= '" + txtFaxNo.Text + "',notes= '" + txtNotes.Text + "' where CustomerID= '" + txtCustomerID.Text + "'";
+                var cb = "update Customer set Customername = '" + txtCustomerName.Text + "',address= '" + txtAddress.Text + "',landmark= '" + txtLandmark.Text + "',city= '" + txtCity.Text + "',state= '" + cmbState.Text + "',zipcode= '" + txtZipCode.Text + "',Phone= '" + txtPhone.Text + "',email= '" + txtEmail.Text + "',mobileno= '" + txtMobileNo.Text + "',faxno= '" + txtFaxNo.Text + "',notes= '" + txtNotes.Text + "' where CustomerID= '" + txtCustomerID.Text + "'";
                 cmd = new OleDbCommand(cb);
                 cmd.Connection = con;
                 cmd.ExecuteReader();
-                MessageBox.Show("Successfully updated", "Customer Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ปรับปรุงข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnUpdate.Enabled = false;
                 if (con.State == ConnectionState.Open)
                 {
@@ -317,11 +299,10 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 }
 
                 con.Close();
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -351,8 +332,8 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmCustomersRecord2 frm = new frmCustomersRecord2();
+            Hide();
+            var frm = new frmCustomersRecord2();
             frm.Show();
             frm.GetData();
         }

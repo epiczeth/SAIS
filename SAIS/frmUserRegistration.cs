@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmUserRegistration : Form
     {
-        OleDbDataReader rdr = null;
-        DataTable dtable = new DataTable();
-        OleDbConnection con = null;
-        OleDbCommand cmd = null;
-        DataTable dt = new DataTable();
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private OleDbDataReader rdr = null;
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
 
 
         public frmUserRegistration()
@@ -26,16 +23,15 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             Autocomplete();
         }
         private void Reset()
         {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
-            txtContact_no.Text = "";
-            txtName.Text = "";
-            txtEmail_Address.Text = "";
+            txtUsername.Text = string.Empty;
+            txtPassword.Text = string.Empty;
+            txtContact_no.Text = string.Empty;
+            txtName.Text = string.Empty;
+            txtEmail_Address.Text = string.Empty;
             btnRegister.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate_record.Enabled = false;
@@ -48,32 +44,32 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void Register_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "")
+            if (txtUsername.Text == string.Empty)
             {
                 MessageBox.Show("กรุณาระบุชื่อผู้ใช้", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtUsername.Focus();
                 return;
             }
-          
-            if (txtPassword.Text == "")
+
+            if (txtPassword.Text == string.Empty)
             {
                 MessageBox.Show("กรุณาระบุรหัสผ่าน", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPassword.Focus();
                 return;
             }
-            if (txtName.Text == "")
+            if (txtName.Text == string.Empty)
             {
                 MessageBox.Show("กรุณาระบุชื่อ", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtName.Focus();
                 return;
             }
-            if (txtContact_no.Text == "")
+            if (txtContact_no.Text == string.Empty)
             {
                 MessageBox.Show("กรุณาระบุเบอร์โทร.", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtContact_no.Focus();
                 return;
             }
-            if (txtEmail_Address.Text == "")
+            if (txtEmail_Address.Text == string.Empty)
             {
                 MessageBox.Show("กรุณาระบุอีเมล์", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmail_Address.Focus();
@@ -83,7 +79,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 con = new OleDbConnection(cs);
                 con.Open();
-                string ct = "select username from registration where username=@find";
+                var ct = "select username from registration where username=@find";
 
                 cmd = new OleDbCommand(ct);
                 cmd.Connection = con;
@@ -94,7 +90,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 if (rdr.Read())
                 {
                     MessageBox.Show("ไม่สามารถใช้ชื่อนี้ได้", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtUsername.Text = "";
+                    txtUsername.Text = string.Empty;
                     txtUsername.Focus();
 
 
@@ -108,7 +104,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
 
-                string cb = "insert into Registration(Username,User_Password,ContactNo,Email,NameOfUser,JoiningDate) VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "','" + txtContact_no.Text + "','" + txtEmail_Address.Text + "','" + txtName.Text + "','" + System.DateTime.Now + "')";
+                var cb = "insert into Registration(Username,User_Password,ContactNo,Email,NameOfUser,JoiningDate) VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "','" + txtContact_no.Text + "','" + txtEmail_Address.Text + "','" + txtName.Text + "','" + System.DateTime.Now + "')";
 
                 cmd = new OleDbCommand(cb);
                 cmd.Connection = con;
@@ -117,7 +113,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
 
-                string cb1 = "insert into users(username,user_password) VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
+                var cb1 = "insert into users(username,user_password) VALUES ('" + txtUsername.Text + "','" + txtPassword.Text + "')";
                 cmd = new OleDbCommand(cb1);
                 cmd.Connection = con;
                 cmd.ExecuteReader();
@@ -125,7 +121,6 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 MessageBox.Show("ลงทะเบียนสำเร็จ", "สำเร็จ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Autocomplete();
                 btnRegister.Enabled = false;
-
             }
             catch (Exception ex)
             {
@@ -133,12 +128,12 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
         }
 
-       
+
         private void CheckAvailability_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtUsername.Text == "")
+                if (txtUsername.Text == string.Empty)
                 {
                     MessageBox.Show("กรุณาระบุชื่อผู้ใช้", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtUsername.Focus();
@@ -146,7 +141,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 }
                 con = new OleDbConnection(cs);
                 con.Open();
-                string ct = "select username from registration where username='" + txtUsername.Text + "'";
+                var ct = "select username from registration where username='" + txtUsername.Text + "'";
 
                 cmd = new OleDbCommand(ct);
                 cmd.Connection = con;
@@ -154,14 +149,13 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                 if (rdr.Read())
                 {
-                    MessageBox.Show("ไม่สามารถใช้ชื่อนี้ได้", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ไม่สามารถใช้ชื่อนี้ได้", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 if (!rdr.Read())
                 {
-                    MessageBox.Show("สามารถใช้ชื่อนี้ได้", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("สามารถใช้ชื่อนี้ได้", string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUsername.Focus();
-
                 }
                 if ((rdr != null))
                 {
@@ -176,7 +170,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void Email_Address_Validating(object sender, CancelEventArgs e)
         {
-            System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+            var rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
             if (txtEmail_Address.Text.Length > 0)
             {
                 if (!rEMail.IsMatch(txtEmail_Address.Text))
@@ -195,7 +189,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void Username_Validating(object sender, CancelEventArgs e)
         {
-            System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9_]");
+            var rEMail = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9_]");
             if (txtUsername.Text.Length > 0)
             {
                 if (!rEMail.IsMatch(txtUsername.Text))
@@ -209,14 +203,12 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void GetDetails_Click(object sender, EventArgs e)
         {
-            frmRegisteredUsersDetails frm = new frmRegisteredUsersDetails();
+            var frm = new frmRegisteredUsersDetails();
             frm.Show();
-
         }
 
         private void Username_TextChanged(object sender, EventArgs e)
         {
-
             btnDelete.Enabled = true;
             btnUpdate_record.Enabled = true;
             try
@@ -232,7 +224,6 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                 if (rdr.Read())
                 {
-
                     txtPassword.Text = (rdr.GetString(1).Trim());
                     txtName.Text = (rdr.GetString(2).Trim());
                     txtContact_no.Text = (rdr.GetString(3).Trim());
@@ -247,8 +238,6 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 {
                     con.Close();
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -258,25 +247,25 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void Autocomplete()
         {
-            try{
-            con = new OleDbConnection(cs);
-            con.Open();
-            OleDbCommand cmd = new OleDbCommand("SELECT username FROM registration", con);
-            DataSet ds = new DataSet();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-            da.Fill(ds, "registration");
-            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-            int i = 0;
-            for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+            try
             {
-                col.Add(ds.Tables[0].Rows[i]["Username"].ToString());
+                con = new OleDbConnection(cs);
+                con.Open();
+                var cmd = new OleDbCommand("SELECT username FROM registration", con);
+                var ds = new DataSet();
+                var da = new OleDbDataAdapter(cmd);
+                da.Fill(ds, "registration");
+                var col = new AutoCompleteStringCollection();
+                var i = 0;
+                for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+                {
+                    col.Add(ds.Tables[0].Rows[i]["Username"].ToString());
+                }
+                txtUsername.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                txtUsername.AutoCompleteCustomSource = col;
+                txtUsername.AutoCompleteMode = AutoCompleteMode.Suggest;
 
-            }
-            txtUsername.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtUsername.AutoCompleteCustomSource = col;
-            txtUsername.AutoCompleteMode = AutoCompleteMode.Suggest;
-
-            con.Close();
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -291,14 +280,14 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
 
-                string cb = "update registration set user_password='" + txtPassword.Text + "',contactno='" + txtContact_no.Text + "',email='" + txtEmail_Address.Text + "',nameofuser='" + txtName.Text + "' where username='" + txtUsername.Text + "'";
+                var cb = "update registration set user_password='" + txtPassword.Text + "',contactno='" + txtContact_no.Text + "',email='" + txtEmail_Address.Text + "',nameofuser='" + txtName.Text + "' where username='" + txtUsername.Text + "'";
                 cmd = new OleDbCommand(cb);
                 cmd.Connection = con;
                 cmd.ExecuteReader();
                 con.Close();
                 con = new OleDbConnection(cs);
                 con.Open();
-                string cb1 = "update users set user_password='" + txtPassword.Text + "' where username='" + txtUsername.Text + "'";
+                var cb1 = "update users set user_password='" + txtPassword.Text + "' where username='" + txtUsername.Text + "'";
                 cmd = new OleDbCommand(cb1);
                 cmd.Connection = con;
                 cmd.ExecuteReader();
@@ -322,14 +311,12 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
         }
         private void delete_records()
         {
-
             try
             {
-
-                int RowsAffected = 0;
+                var RowsAffected = 0;
                 con = new OleDbConnection(cs);
                 con.Open();
-                string ct = "delete from Users where Username='" + txtUsername.Text + "'";
+                var ct = "delete from Users where Username='" + txtUsername.Text + "'";
                 cmd = new OleDbCommand(ct);
                 cmd.Connection = con;
                 RowsAffected = cmd.ExecuteNonQuery();
@@ -338,10 +325,10 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 {
                     con.Close();
                 }
-          
+
                 con = new OleDbConnection(cs);
                 con.Open();
-                string cq = "delete from Registration where Username='" + txtUsername.Text + "'";
+                var cq = "delete from Registration where Username='" + txtUsername.Text + "'";
                 cmd = new OleDbCommand(cq);
                 cmd.Connection = con;
                 RowsAffected = cmd.ExecuteNonQuery();
@@ -361,7 +348,6 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 {
                     con.Close();
                 }
-             
             }
             catch (Exception ex)
             {

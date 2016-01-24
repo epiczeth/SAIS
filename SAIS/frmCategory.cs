@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+
 namespace Sales_and_Inventory_System__Gadgets_Shop_
 {
     public partial class frmCategory : Form
     {
-        OleDbDataReader rdr = null;
-        DataTable dtable = new DataTable();
-        OleDbConnection con = null;
-        OleDbCommand cmd = null;
-        DataTable dt = new DataTable();
-        String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
+        private OleDbDataReader rdr = null;
+        private OleDbConnection con = null;
+        private OleDbCommand cmd = null;
+        private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
 
 
         public frmCategory()
@@ -31,9 +27,9 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtCategoryName.Text == "")
+            if (txtCategoryName.Text == string.Empty)
             {
-                MessageBox.Show("Please enter Category name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("กรุณาระบุชื่อประเภทสินค้า", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCategoryName.Focus();
                 return;
             }
@@ -43,7 +39,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 con = new OleDbConnection(cs);
                 con.Open();
-                string ct = "select CategoryName from Category where CategoryName='" + txtCategoryName.Text + "'";
+                var ct = "select CategoryName from Category where CategoryName='" + txtCategoryName.Text + "'";
 
                 cmd = new OleDbCommand(ct);
                 cmd.Connection = con;
@@ -51,8 +47,8 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
                 if (rdr.Read())
                 {
-                    MessageBox.Show("Category Name Already Exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtCategoryName.Text = "";
+                    MessageBox.Show("Category Name Already Exists", "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCategoryName.Text = string.Empty;
                     txtCategoryName.Focus();
 
 
@@ -66,52 +62,48 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
 
-                string cb = "insert into Category(CategoryName) VALUES ('" + txtCategoryName.Text + "')";
+                var cb = string.Format("insert into Category(CategoryName) VALUES ('{0}')", txtCategoryName.Text);
 
-                cmd = new OleDbCommand(cb);
-                cmd.Connection = con;
+                cmd = new OleDbCommand(cb) { Connection = con };
                 cmd.ExecuteReader();
                 con.Close();
-                MessageBox.Show("Successfully saved", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("บันทึกข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Autocomplete();
                 btnSave.Enabled = false;
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you really want to delete this record?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("คุณต้องการลบข้อมูลนี้จริงหรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 delete_records();
             }
         }
         private void delete_records()
         {
-
             try
             {
-
-                int RowsAffected = 0;
+                var RowsAffected = 0;
                 con = new OleDbConnection(cs);
                 con.Open();
-                string cq = "delete from Category where Categoryname='" + txtCategoryName.Text + "'";
+                var cq = "delete from Category where Categoryname='" + txtCategoryName.Text + "'";
                 cmd = new OleDbCommand(cq);
                 cmd.Connection = con;
                 RowsAffected = cmd.ExecuteNonQuery();
                 if (RowsAffected > 0)
                 {
-                    MessageBox.Show("Successfully deleted", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ลบข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                     Autocomplete();
                 }
                 else
                 {
-                    MessageBox.Show("No Record found", "Sorry", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("ข้อมูลดังกล่าวไม่มีอยู่จริง", "ขออภัย", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
                     Autocomplete();
                 }
@@ -119,12 +111,10 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 {
                     con.Close();
                 }
-
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Autocomplete()
@@ -133,16 +123,15 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             {
                 con = new OleDbConnection(cs);
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand("SELECT distinct Categoryname FROM Category", con);
-                DataSet ds = new DataSet();
-                OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+                var cmd = new OleDbCommand("SELECT distinct Categoryname FROM Category", con);
+                var ds = new DataSet();
+                var da = new OleDbDataAdapter(cmd);
                 da.Fill(ds, "Category");
-                AutoCompleteStringCollection col = new AutoCompleteStringCollection();
-                int i = 0;
+                var col = new AutoCompleteStringCollection();
+                var i = 0;
                 for (i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
                 {
                     col.Add(ds.Tables[0].Rows[i]["Categoryname"].ToString());
-
                 }
                 txtCategoryName.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 txtCategoryName.AutoCompleteCustomSource = col;
@@ -152,7 +141,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -162,23 +151,23 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
                 con = new OleDbConnection(cs);
                 con.Open();
 
-                string cb = "update Category set CategoryName='" + txtCategoryName.Text + "' where Categoryname='" + textBox1.Text + "'";
+                var cb = "update Category set CategoryName='" + txtCategoryName.Text + "' where Categoryname='" + textBox1.Text + "'";
                 cmd = new OleDbCommand(cb);
                 cmd.Connection = con;
                 cmd.ExecuteReader();
                 con.Close();
-                MessageBox.Show("Successfully updated", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("ปรับปรุงข้อมูลสำเร็จ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Autocomplete();
                 btnUpdate.Enabled = false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ล้มเหลว", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Reset()
         {
-            txtCategoryName.Text = "";
+            txtCategoryName.Text = string.Empty;
             btnSave.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
@@ -192,8 +181,8 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_
 
         private void btnGetData_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmCategoryRecord frm = new frmCategoryRecord();
+            Hide();
+            var frm = new frmCategoryRecord();
             frm.Show();
             frm.GetData();
         }
