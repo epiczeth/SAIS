@@ -8,7 +8,7 @@
     <ProjectGuid>{B03A3D65-EF0F-44CA-B801-984AEFCB078D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sales_and_Inventory_System__Gadgets_Shop_</RootNamespace>
+    <RootNamespace>SAIS</RootNamespace>
     <AssemblyName>SAIS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
@@ -59,7 +59,7 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Sales_and_Inventory_System__Gadgets_Shop_.Program</StartupObject>
+    <StartupObject>SAIS.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -84,6 +84,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Copy of rptSales.cs">
+      <DependentUpon>Copy of rptSales.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="frmCustomersReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,11 +302,20 @@
       <DependentUpon>rptSales.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="saisDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>saisDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SIS_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SIS_DBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Copy of rptSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Copy of rptSales.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +444,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="saisDataSet.xsc">
+      <DependentUpon>saisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="saisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>saisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="saisDataSet.xss">
+      <DependentUpon>saisDataSet.xsd</DependentUpon>
+    </None>
     <None Include="SIS_DBDataSet.xsc">
       <DependentUpon>SIS_DBDataSet.xsd</DependentUpon>
     </None>

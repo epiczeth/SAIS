@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sales_and_Inventory_System__Gadgets_Shop_.Properties {
+namespace SAIS.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -31,6 +31,16 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_.Properties {
         public string SIS_DBConnectionString {
             get {
                 return ((string)(this["SIS_DBConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=sais;Integrated Security=True")]
+        public string saisConnectionString {
+            get {
+                return ((string)(this["saisConnectionString"]));
             }
         }
     }

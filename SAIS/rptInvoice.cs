@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sales_and_Inventory_System__Gadgets_Shop_ {
+namespace SAIS {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Sales_and_Inventory_System__Gadgets_Shop_ {
         
         public override string FullResourceName {
             get {
-                return "Sales_and_Inventory_System__Gadgets_Shop_.rptInvoice.rpt";
+                return "SAIS.rptInvoice.rpt";
             }
             set {
                 // Do nothing

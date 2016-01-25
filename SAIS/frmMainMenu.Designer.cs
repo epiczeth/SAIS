@@ -1,4 +1,4 @@
-﻿namespace Sales_and_Inventory_System__Gadgets_Shop_
+﻿namespace SAIS
 {
     partial class frmMainMenu
     {
@@ -107,7 +107,7 @@
             // registrationToolStripMenuItem
             // 
             this.registrationToolStripMenuItem.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registrationToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.RegistrationIcon;
+            this.registrationToolStripMenuItem.Image = global::SAIS.Properties.Resources.RegistrationIcon;
             this.registrationToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.registrationToolStripMenuItem.Name = "registrationToolStripMenuItem";
             this.registrationToolStripMenuItem.Size = new System.Drawing.Size(63, 73);
@@ -118,7 +118,7 @@
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Usergroup;
+            this.customerToolStripMenuItem.Image = global::SAIS.Properties.Resources.Usergroup;
             this.customerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(62, 73);
@@ -129,7 +129,7 @@
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Box;
+            this.productToolStripMenuItem.Image = global::SAIS.Properties.Resources.Box;
             this.productToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
             this.productToolStripMenuItem.Size = new System.Drawing.Size(62, 73);
@@ -140,7 +140,7 @@
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.stock_icon_v_3;
+            this.stockToolStripMenuItem.Image = global::SAIS.Properties.Resources.stock_icon_v_3;
             this.stockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             this.stockToolStripMenuItem.Size = new System.Drawing.Size(71, 73);
@@ -151,7 +151,7 @@
             // invoiceToolStripMenuItem
             // 
             this.invoiceToolStripMenuItem.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.invoiceToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.CCRQInvoice;
+            this.invoiceToolStripMenuItem.Image = global::SAIS.Properties.Resources.CCRQInvoice;
             this.invoiceToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
             this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(62, 73);
@@ -162,7 +162,7 @@
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.logout;
+            this.logOutToolStripMenuItem.Image = global::SAIS.Properties.Resources.logout;
             this.logOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
             this.logOutToolStripMenuItem.Size = new System.Drawing.Size(77, 73);
@@ -311,7 +311,7 @@
             // 
             // notepadToolStripMenuItem
             // 
-            this.notepadToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Notepad1;
+            this.notepadToolStripMenuItem.Image = global::SAIS.Properties.Resources.Notepad1;
             this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
             this.notepadToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.notepadToolStripMenuItem.Text = "Notepad";
@@ -319,7 +319,7 @@
             // 
             // calculatorToolStripMenuItem
             // 
-            this.calculatorToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.calc;
+            this.calculatorToolStripMenuItem.Image = global::SAIS.Properties.Resources.calc;
             this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
             this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.calculatorToolStripMenuItem.Text = "Calculator";
@@ -327,7 +327,7 @@
             // 
             // wordpadToolStripMenuItem
             // 
-            this.wordpadToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.Wordpad_icon__Windows_7_;
+            this.wordpadToolStripMenuItem.Image = global::SAIS.Properties.Resources.Wordpad_icon__Windows_7_;
             this.wordpadToolStripMenuItem.Name = "wordpadToolStripMenuItem";
             this.wordpadToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.wordpadToolStripMenuItem.Text = "Wordpad";
@@ -335,7 +335,7 @@
             // 
             // taskManagerToolStripMenuItem
             // 
-            this.taskManagerToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.task_manager1;
+            this.taskManagerToolStripMenuItem.Image = global::SAIS.Properties.Resources.task_manager1;
             this.taskManagerToolStripMenuItem.Name = "taskManagerToolStripMenuItem";
             this.taskManagerToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.taskManagerToolStripMenuItem.Text = "Task Manager";
@@ -343,7 +343,7 @@
             // 
             // mSWordToolStripMenuItem
             // 
-            this.mSWordToolStripMenuItem.Image = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.MS_Word_2_icon1;
+            this.mSWordToolStripMenuItem.Image = global::SAIS.Properties.Resources.MS_Word_2_icon1;
             this.mSWordToolStripMenuItem.Name = "mSWordToolStripMenuItem";
             this.mSWordToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.mSWordToolStripMenuItem.Text = "MS Word";

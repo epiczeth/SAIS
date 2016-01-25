@@ -1,4 +1,4 @@
-﻿namespace Sales_and_Inventory_System__Gadgets_Shop_
+﻿namespace SAIS
 {
     partial class frmSplash
     {
@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.cloud_computing_laptop_smartphone_tablet;
+            this.BackgroundImage = global::SAIS.Properties.Resources.cloud_computing_laptop_smartphone_tablet;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(603, 334);
             this.ControlBox = false;

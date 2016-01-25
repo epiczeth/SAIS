@@ -16,14 +16,14 @@ namespace SAIS {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptSales : ReportClass {
+    public class Copy_of_rptSales : ReportClass {
         
-        public rptSales() {
+        public Copy_of_rptSales() {
         }
         
         public override string ResourceName {
             get {
-                return "rptSales.rpt";
+                return "Copy of rptSales.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SAIS {
         
         public override string FullResourceName {
             get {
-                return "SAIS.rptSales.rpt";
+                return "SAIS.Copy of rptSales.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace SAIS {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptSales : Component, ICachedReport {
+    public class CachedCopy_of_rptSales : Component, ICachedReport {
         
-        public CachedrptSales() {
+        public CachedCopy_of_rptSales() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace SAIS {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptSales rpt = new rptSales();
+            Copy_of_rptSales rpt = new Copy_of_rptSales();
             rpt.Site = this.Site;
             return rpt;
         }

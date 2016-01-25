@@ -1,4 +1,4 @@
-﻿namespace Sales_and_Inventory_System__Gadgets_Shop_
+﻿namespace SAIS
 {
     partial class frmLogin
     {
@@ -173,7 +173,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources.top_image;
+            this.pictureBox1.BackgroundImage = global::SAIS.Properties.Resources.top_image;
             this.pictureBox1.Location = new System.Drawing.Point(-2, -2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(493, 43);
@@ -187,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BackgroundImage = global::Sales_and_Inventory_System__Gadgets_Shop_.Properties.Resources._2;
+            this.BackgroundImage = global::SAIS.Properties.Resources._2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(491, 443);
             this.Controls.Add(this.linkLabel3);

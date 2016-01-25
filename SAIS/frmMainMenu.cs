@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
-namespace Sales_and_Inventory_System__Gadgets_Shop_
+namespace SAIS
 {
     public partial class frmMainMenu : Form
     {
