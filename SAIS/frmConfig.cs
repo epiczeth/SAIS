@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Data.Odbc;
 using System.IO;
 
 namespace SAIS
@@ -14,10 +15,12 @@ namespace SAIS
         private OleDbDataReader rdr = null;
         private OleDbConnection con = null;
         private OleDbCommand cmd = null;
+        //private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         private String cs = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\SIS_DB.accdb;";
         public frmConfig()
         {
             InitializeComponent();
+            
         }
         public void FillCombo()
         {

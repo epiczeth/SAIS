@@ -84,12 +84,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Copy of rptSales.cs">
-      <DependentUpon>Copy of rptSales.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="frmCustomersReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,20 +296,15 @@
       <DependentUpon>rptSales.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="saisDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>saisDataSet.xsd</DependentUpon>
+    <Compile Include="SIS_DBDataSet.cs">
+      <DependentUpon>SIS_DBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SIS_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SIS_DBDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Copy of rptSales.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Copy of rptSales.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,17 +433,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="saisDataSet.xsc">
-      <DependentUpon>saisDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="saisDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>saisDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="saisDataSet.xss">
-      <DependentUpon>saisDataSet.xsd</DependentUpon>
-    </None>
     <None Include="SIS_DBDataSet.xsc">
       <DependentUpon>SIS_DBDataSet.xsd</DependentUpon>
     </None>
